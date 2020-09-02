@@ -1,0 +1,2392 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    119286,       2384]
+NotebookOptionsPosition[    112886,       2262]
+NotebookOutlinePosition[    114961,       2313]
+CellTagsIndexPosition[    114625,       2301]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Musical Scales and Modes in Every Key", "DemoTitle",
+ CellChangeTimes->{{3.7752507449456186`*^9, 
+  3.775250750450637*^9}},ExpressionUUID->"1d26d9ef-a633-4f6b-b2e3-\
+500daf9036f6"],
+
+Cell["", "InitializationSection",ExpressionUUID->"3a2728e2-946d-4029-8a23-47c3dd53a41c"],
+
+Cell[CellGroupData[{
+
+Cell["", "ManipulateSection",ExpressionUUID->"006c84ec-2877-4901-9684-4db52258f9c4"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"DynamicModule", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "maj", ",", "MAJ", ",", "natmin", ",", "NATMIN", ",", "harmin", ",", 
+       "HARMIN", ",", "alt", ",", "ALT", ",", "blues", ",", "BLUES", ",", 
+       "chro", ",", "CHRO", ",", "dor", ",", "DOR", ",", "pent", ",", "PENT", 
+       ",", "melmin", ",", "MELMIN", ",", "phy", ",", "PHY", ",", "lyd", ",", 
+       "LYD", ",", "mix", ",", "MIX", ",", "loc", ",", "LOC", ",", "aug", ",",
+        "AUG", ",", "half", ",", "HALF", ",", "harmaj", ",", "HARMAJ", ",", 
+       "hun", ",", "HUN", ",", "hira", ",", "HIRA", ",", "pro", ",", "PRO", 
+       ",", "tri", ",", "TRI", ",", "whol", ",", "WHOL", ",", "fla", ",", 
+       "FLA", ",", "en", ",", "EN"}], "}"}], ",", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"maj", "=", 
+       RowBox[{"{", 
+        RowBox[{"key", ",", 
+         RowBox[{"key", "+", "2"}], ",", 
+         RowBox[{"key", "+", "4"}], ",", 
+         RowBox[{"key", "+", "5"}], ",", 
+         RowBox[{"key", "+", "7"}], ",", 
+         RowBox[{"key", "+", "9"}], ",", 
+         RowBox[{"key", "+", "11"}], ",", 
+         RowBox[{"key", "+", "12"}]}], "}"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"MAJ", "=", 
+       RowBox[{"Map", "[", 
+        RowBox[{"SoundNote", ",", "maj"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"natmin", "=", 
+       RowBox[{"{", 
+        RowBox[{"key", ",", 
+         RowBox[{"key", "+", "2"}], ",", 
+         RowBox[{"key", "+", "3"}], ",", 
+         RowBox[{"key", "+", "5"}], ",", 
+         RowBox[{"key", "+", "7"}], ",", 
+         RowBox[{"key", "+", "8"}], ",", 
+         RowBox[{"key", "+", "10"}], ",", 
+         RowBox[{"key", "+", "12"}]}], "}"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"NATMIN", "=", 
+       RowBox[{"Map", "[", 
+        RowBox[{"SoundNote", ",", "natmin"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"harmin", "=", 
+       RowBox[{"{", 
+        RowBox[{"key", ",", 
+         RowBox[{"key", "+", "2"}], ",", 
+         RowBox[{"key", "+", "3"}], ",", 
+         RowBox[{"key", "+", "5"}], ",", 
+         RowBox[{"key", "+", "7"}], ",", 
+         RowBox[{"key", "+", "8"}], ",", 
+         RowBox[{"key", "+", "11"}], ",", 
+         RowBox[{"key", "+", "12"}]}], "}"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"HARMIN", "=", 
+       RowBox[{"Map", "[", 
+        RowBox[{"SoundNote", ",", "harmin"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"alt", "=", 
+       RowBox[{"{", 
+        RowBox[{"key", ",", 
+         RowBox[{"key", "+", "1"}], ",", 
+         RowBox[{"key", "+", "3"}], ",", 
+         RowBox[{"key", "+", "4"}], ",", 
+         RowBox[{"key", "+", "6"}], ",", 
+         RowBox[{"key", "+", "8"}], ",", 
+         RowBox[{"key", "+", "10"}], ",", 
+         RowBox[{"key", "+", "12"}]}], "}"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"ALT", "=", 
+       RowBox[{"Map", "[", 
+        RowBox[{"SoundNote", ",", "alt"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"blues", "=", 
+       RowBox[{"{", 
+        RowBox[{"key", ",", 
+         RowBox[{"key", "+", "3"}], ",", 
+         RowBox[{"key", "+", "5"}], ",", 
+         RowBox[{"key", "+", "6"}], ",", 
+         RowBox[{"key", "+", "7"}], ",", 
+         RowBox[{"key", "+", "10"}], ",", 
+         RowBox[{"key", "+", "12"}]}], "}"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"BLUES", "=", 
+       RowBox[{"Map", "[", 
+        RowBox[{"SoundNote", ",", "blues"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"chro", "=", 
+       RowBox[{"{", 
+        RowBox[{"key", ",", 
+         RowBox[{"key", "+", "1"}], ",", 
+         RowBox[{"key", "+", "2"}], ",", 
+         RowBox[{"key", "+", "3"}], ",", 
+         RowBox[{"key", "+", "4"}], ",", 
+         RowBox[{"key", "+", "5"}], ",", 
+         RowBox[{"key", "+", "6"}], ",", 
+         RowBox[{"key", "+", "7"}], ",", 
+         RowBox[{"key", "+", "8"}], ",", 
+         RowBox[{"key", "+", "9"}], ",", 
+         RowBox[{"key", "+", "10"}], ",", 
+         RowBox[{"key", "+", "11"}], ",", 
+         RowBox[{"key", "+", "12"}]}], "}"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"CHRO", "=", 
+       RowBox[{"Map", "[", 
+        RowBox[{"SoundNote", ",", "chro"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"dor", "=", 
+       RowBox[{"{", 
+        RowBox[{"key", ",", 
+         RowBox[{"key", "+", "2"}], ",", 
+         RowBox[{"key", "+", "3"}], ",", 
+         RowBox[{"key", "+", "5"}], ",", 
+         RowBox[{"key", "+", "7"}], ",", 
+         RowBox[{"key", "+", "9"}], ",", 
+         RowBox[{"key", "+", "10"}], ",", 
+         RowBox[{"key", "+", "12"}]}], "}"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"DOR", "=", 
+       RowBox[{"Map", "[", 
+        RowBox[{"SoundNote", ",", "dor"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"pent", "=", 
+       RowBox[{"{", 
+        RowBox[{"key", ",", 
+         RowBox[{"key", "+", "2"}], ",", 
+         RowBox[{"key", "+", "4"}], ",", 
+         RowBox[{"key", "+", "7"}], ",", 
+         RowBox[{"key", "+", "9"}], ",", 
+         RowBox[{"key", "+", "12"}]}], "}"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"PENT", "=", 
+       RowBox[{"Map", "[", 
+        RowBox[{"SoundNote", ",", "pent"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"melmin", "=", 
+       RowBox[{"{", 
+        RowBox[{"key", ",", 
+         RowBox[{"key", "+", "2"}], ",", 
+         RowBox[{"key", "+", "3"}], ",", 
+         RowBox[{"key", "+", "5"}], ",", 
+         RowBox[{"key", "+", "7"}], ",", 
+         RowBox[{"key", "+", "9"}], ",", 
+         RowBox[{"key", "+", "11"}], ",", 
+         RowBox[{"key", "+", "12"}], ",", 
+         RowBox[{"key", "+", "10"}], ",", 
+         RowBox[{"key", "+", "8"}], ",", 
+         RowBox[{"key", "+", "7"}], ",", 
+         RowBox[{"key", "+", "5"}], ",", 
+         RowBox[{"key", "+", "3"}], ",", 
+         RowBox[{"key", "+", "2"}], ",", "key"}], "}"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"MELMIN", "=", 
+       RowBox[{"Map", "[", 
+        RowBox[{"SoundNote", ",", "melmin"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"phy", "=", 
+       RowBox[{"{", 
+        RowBox[{"key", ",", 
+         RowBox[{"key", "+", "1"}], ",", 
+         RowBox[{"key", "+", "3"}], ",", 
+         RowBox[{"key", "+", "5"}], ",", 
+         RowBox[{"key", "+", "7"}], ",", 
+         RowBox[{"key", "+", "8"}], ",", 
+         RowBox[{"key", "+", "10"}], ",", 
+         RowBox[{"key", "+", "12"}]}], "}"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"PHY", "=", 
+       RowBox[{"Map", "[", 
+        RowBox[{"SoundNote", ",", "phy"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"lyd", "=", 
+       RowBox[{"{", 
+        RowBox[{"key", ",", 
+         RowBox[{"key", "+", "2"}], ",", 
+         RowBox[{"key", "+", "4"}], ",", 
+         RowBox[{"key", "+", "6"}], ",", 
+         RowBox[{"key", "+", "7"}], ",", 
+         RowBox[{"key", "+", "9"}], ",", 
+         RowBox[{"key", "+", "11"}], ",", 
+         RowBox[{"key", "+", "12"}]}], "}"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"LYD", "=", 
+       RowBox[{"Map", "[", 
+        RowBox[{"SoundNote", ",", "lyd"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"mix", "=", 
+       RowBox[{"{", 
+        RowBox[{"key", ",", 
+         RowBox[{"key", "+", "2"}], ",", 
+         RowBox[{"key", "+", "4"}], ",", 
+         RowBox[{"key", "+", "5"}], ",", 
+         RowBox[{"key", "+", "7"}], ",", 
+         RowBox[{"key", "+", "9"}], ",", 
+         RowBox[{"key", "+", "10"}], ",", 
+         RowBox[{"key", "+", "12"}]}], "}"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"MIX", "=", 
+       RowBox[{"Map", "[", 
+        RowBox[{"SoundNote", ",", "mix"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"loc", "=", 
+       RowBox[{"{", 
+        RowBox[{"key", ",", 
+         RowBox[{"key", "+", "1"}], ",", 
+         RowBox[{"key", "+", "3"}], ",", 
+         RowBox[{"key", "+", "5"}], ",", 
+         RowBox[{"key", "+", "6"}], ",", 
+         RowBox[{"key", "+", "8"}], ",", 
+         RowBox[{"key", "+", "10"}], ",", 
+         RowBox[{"key", "+", "12"}]}], "}"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"LOC", "=", 
+       RowBox[{"Map", "[", 
+        RowBox[{"SoundNote", ",", "loc"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"aug", "=", 
+       RowBox[{"{", 
+        RowBox[{"key", ",", 
+         RowBox[{"key", "+", "3"}], ",", 
+         RowBox[{"key", "+", "4"}], ",", 
+         RowBox[{"key", "+", "7"}], ",", 
+         RowBox[{"key", "+", "8"}], ",", 
+         RowBox[{"key", "+", "11"}], ",", 
+         RowBox[{"key", "+", "12"}]}], "}"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"AUG", "=", 
+       RowBox[{"Map", "[", 
+        RowBox[{"SoundNote", ",", "aug"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"half", "=", 
+       RowBox[{"{", 
+        RowBox[{"key", ",", 
+         RowBox[{"key", "+", "2"}], ",", 
+         RowBox[{"key", "+", "3"}], ",", 
+         RowBox[{"key", "+", "5"}], ",", 
+         RowBox[{"key", "+", "6"}], ",", 
+         RowBox[{"key", "+", "8"}], ",", 
+         RowBox[{"key", "+", "10"}], ",", 
+         RowBox[{"key", "+", "12"}]}], "}"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"HALF", "=", 
+       RowBox[{"Map", "[", 
+        RowBox[{"SoundNote", ",", "half"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"harmaj", "=", 
+       RowBox[{"{", 
+        RowBox[{"key", ",", 
+         RowBox[{"key", "+", "2"}], ",", 
+         RowBox[{"key", "+", "4"}], ",", 
+         RowBox[{"key", "+", "5"}], ",", 
+         RowBox[{"key", "+", "7"}], ",", 
+         RowBox[{"key", "+", "8"}], ",", 
+         RowBox[{"key", "+", "11"}], ",", 
+         RowBox[{"key", "+", "12"}]}], "}"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"HARMAJ", "=", 
+       RowBox[{"Map", "[", 
+        RowBox[{"SoundNote", ",", "harmaj"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"hun", "=", 
+       RowBox[{"{", 
+        RowBox[{"key", ",", 
+         RowBox[{"key", "+", "2"}], ",", 
+         RowBox[{"key", "+", "3"}], ",", 
+         RowBox[{"key", "+", "6"}], ",", 
+         RowBox[{"key", "+", "7"}], ",", 
+         RowBox[{"key", "+", "8"}], ",", 
+         RowBox[{"key", "+", "11"}], ",", 
+         RowBox[{"key", "+", "12"}]}], "}"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"HUN", "=", 
+       RowBox[{"Map", "[", 
+        RowBox[{"SoundNote", ",", "hun"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"hira", "=", 
+       RowBox[{"{", 
+        RowBox[{"key", ",", 
+         RowBox[{"key", "+", "4"}], ",", 
+         RowBox[{"key", "+", "6"}], ",", 
+         RowBox[{"key", "+", "7"}], ",", 
+         RowBox[{"key", "+", "11"}], ",", 
+         RowBox[{"key", "+", "12"}]}], "}"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"HIRA", "=", 
+       RowBox[{"Map", "[", 
+        RowBox[{"SoundNote", ",", "hira"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"pro", "=", 
+       RowBox[{"{", 
+        RowBox[{"key", ",", 
+         RowBox[{"key", "+", "2"}], ",", 
+         RowBox[{"key", "+", "4"}], ",", 
+         RowBox[{"key", "+", "6"}], ",", 
+         RowBox[{"key", "+", "9"}], ",", 
+         RowBox[{"key", "+", "10"}], ",", 
+         RowBox[{"key", "+", "12"}]}], "}"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"PRO", "=", 
+       RowBox[{"Map", "[", 
+        RowBox[{"SoundNote", ",", "pro"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"tri", "=", 
+       RowBox[{"{", 
+        RowBox[{"key", ",", 
+         RowBox[{"key", "+", "1"}], ",", 
+         RowBox[{"key", "+", "4"}], ",", 
+         RowBox[{"key", "+", "6"}], ",", 
+         RowBox[{"key", "+", "7"}], ",", 
+         RowBox[{"key", "+", "10"}], ",", 
+         RowBox[{"key", "+", "12"}]}], "}"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"TRI", "=", 
+       RowBox[{"Map", "[", 
+        RowBox[{"SoundNote", ",", "tri"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"whol", "=", 
+       RowBox[{"{", 
+        RowBox[{"key", ",", 
+         RowBox[{"key", "+", "2"}], ",", 
+         RowBox[{"key", "+", "4"}], ",", 
+         RowBox[{"key", "+", "6"}], ",", 
+         RowBox[{"key", "+", "8"}], ",", 
+         RowBox[{"key", "+", "10"}], ",", 
+         RowBox[{"key", "+", "12"}]}], "}"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"WHOL", "=", 
+       RowBox[{"Map", "[", 
+        RowBox[{"SoundNote", ",", "whol"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"fla", "=", 
+       RowBox[{"{", 
+        RowBox[{"key", ",", 
+         RowBox[{"key", "+", "1"}], ",", 
+         RowBox[{"key", "+", "4"}], ",", 
+         RowBox[{"key", "+", "5"}], ",", 
+         RowBox[{"key", "+", "7"}], ",", 
+         RowBox[{"key", "+", "8"}], ",", 
+         RowBox[{"key", "+", "11"}], ",", 
+         RowBox[{"key", "+", "12"}]}], "}"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"FLA", "=", 
+       RowBox[{"Map", "[", 
+        RowBox[{"SoundNote", ",", "fla"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"en", "=", 
+       RowBox[{"{", 
+        RowBox[{"key", ",", 
+         RowBox[{"key", "+", "1"}], ",", 
+         RowBox[{"key", "+", "4"}], ",", 
+         RowBox[{"key", "+", "6"}], ",", 
+         RowBox[{"key", "+", "8"}], ",", 
+         RowBox[{"key", "+", "10"}], ",", 
+         RowBox[{"key", "+", "11"}], ",", 
+         RowBox[{"key", "+", "12"}], ",", 
+         RowBox[{"key", "+", "11"}], ",", 
+         RowBox[{"key", "+", "10"}], ",", 
+         RowBox[{"key", "+", "8"}], ",", 
+         RowBox[{"key", "+", "5"}], ",", 
+         RowBox[{"key", "+", "4"}], ",", 
+         RowBox[{"key", "+", "1"}], ",", "key"}], "}"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"EN", "=", 
+       RowBox[{"Map", "[", 
+        RowBox[{"SoundNote", ",", "en"}], "]"}]}], ";", "\[IndentingNewLine]",
+       "\[IndentingNewLine]", 
+      RowBox[{"pers", "=", 
+       RowBox[{"{", 
+        RowBox[{"key", ",", 
+         RowBox[{"key", "+", "1"}], ",", 
+         RowBox[{"key", "+", "4"}], ",", 
+         RowBox[{"key", "+", "5"}], ",", 
+         RowBox[{"key", "+", "6"}], ",", 
+         RowBox[{"key", "+", "8"}], ",", 
+         RowBox[{"key", "+", "11"}], ",", 
+         RowBox[{"key", "+", "12"}]}], "}"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"PERS", "=", 
+       RowBox[{"Map", "[", 
+        RowBox[{"SoundNote", ",", "pers"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"Column", "[", 
+       RowBox[{
+        RowBox[{"{", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{
+          "Style", "[", 
+           "\"\<Adjust the key using the slider above.\nkey = 0 -> C         \
+key = 1 -> C#/D\[Flat]     key = 2 -> D          key = 3 -> D#/E\[Flat]\nkey \
+= 4 -> E         key = 5 -> F         key = 6 -> F#/G\[Flat]      key = 7 -> \
+G\nkey = 8 -> G#/A\[Flat]     key = 9 -> A         key = 10 -> A#/B\[Flat]    \
+ key = 11 -> B\>\"", "]"}], ",", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+          RowBox[{"Grid", "[", 
+           RowBox[{"{", 
+            RowBox[{"{", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"Button", "[", 
+               RowBox[{"\"\<Major\>\"", ",", 
+                RowBox[{"EmitSound", "[", "MAJ", "]"}], ",", 
+                RowBox[{"ImageSize", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{"74", ",", "50"}], "}"}]}], ",", 
+                RowBox[{"Alignment", "\[Rule]", "Center"}]}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"Button", "[", 
+               RowBox[{"\"\<Harmonic\\nMajor\>\"", ",", 
+                RowBox[{"EmitSound", "[", "HARMAJ", "]"}], ",", 
+                RowBox[{"ImageSize", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{"74", ",", "50"}], "}"}]}], ",", 
+                RowBox[{"Alignment", "\[Rule]", "Center"}]}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"Button", "[", 
+               RowBox[{"\"\<Natural\\nMinor\>\"", ",", 
+                RowBox[{"EmitSound", "[", "NATMIN", "]"}], ",", 
+                RowBox[{"ImageSize", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{"74", ",", "50"}], "}"}]}], ",", 
+                RowBox[{"Alignment", "\[Rule]", "Center"}]}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"Button", "[", 
+               RowBox[{"\"\<Harmonic\\nMinor\>\"", ",", 
+                RowBox[{"EmitSound", "[", "HARMIN", "]"}], ",", 
+                RowBox[{"ImageSize", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{"74", ",", "50"}], "}"}]}], ",", 
+                RowBox[{"Alignment", "\[Rule]", "Center"}]}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"Button", "[", 
+               RowBox[{"\"\<Melodic\\nMinor\>\"", ",", 
+                RowBox[{"EmitSound", "[", "MELMIN", "]"}], ",", 
+                RowBox[{"ImageSize", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{"74", ",", "50"}], "}"}]}], ",", 
+                RowBox[{"Alignment", "\[Rule]", "Center"}]}], "]"}]}], 
+             "\[IndentingNewLine]", "}"}], "}"}], "]"}], ",", 
+          "\[IndentingNewLine]", "\[IndentingNewLine]", 
+          RowBox[{"Grid", "[", 
+           RowBox[{"{", 
+            RowBox[{"{", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"Button", "[", 
+               RowBox[{"\"\<Whole Tone\>\"", ",", 
+                RowBox[{"EmitSound", "[", "WHOL", "]"}], ",", 
+                RowBox[{"ImageSize", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{"74", ",", "50"}], "}"}]}], ",", 
+                RowBox[{"Alignment", "\[Rule]", "Center"}]}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"Button", "[", 
+               RowBox[{"\"\<Augmented\>\"", ",", 
+                RowBox[{"EmitSound", "[", "AUG", "]"}], ",", 
+                RowBox[{"ImageSize", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{"74", ",", "50"}], "}"}]}], ",", 
+                RowBox[{"Alignment", "\[Rule]", "Center"}]}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"Button", "[", 
+               RowBox[{"\"\<Prometheus\>\"", ",", 
+                RowBox[{"EmitSound", "[", "PRO", "]"}], ",", 
+                RowBox[{"ImageSize", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{"74", ",", "50"}], "}"}]}], ",", 
+                RowBox[{"Alignment", "\[Rule]", "Center"}]}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"Button", "[", 
+               RowBox[{"\"\<Blues\>\"", ",", 
+                RowBox[{"EmitSound", "[", "BLUES", "]"}], ",", 
+                RowBox[{"ImageSize", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{"74", ",", "50"}], "}"}]}], ",", 
+                RowBox[{"Alignment", "\[Rule]", "Center"}]}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"Button", "[", 
+               RowBox[{"\"\<Tritone\>\"", ",", 
+                RowBox[{"EmitSound", "[", "TRI", "]"}], ",", 
+                RowBox[{"ImageSize", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{"74", ",", "50"}], "}"}]}], ",", 
+                RowBox[{"Alignment", "\[Rule]", "Center"}]}], "]"}]}], 
+             "\[IndentingNewLine]", "}"}], "}"}], "]"}], ",", 
+          "\[IndentingNewLine]", "\[IndentingNewLine]", 
+          RowBox[{"Grid", "[", 
+           RowBox[{"{", 
+            RowBox[{"{", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"Button", "[", 
+               RowBox[{"\"\<Persian\>\"", ",", 
+                RowBox[{"EmitSound", "[", "PERS", "]"}], ",", 
+                RowBox[{"ImageSize", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{"74", ",", "50"}], "}"}]}], ",", 
+                RowBox[{"Alignment", "\[Rule]", "Center"}]}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"Button", "[", 
+               RowBox[{"\"\<Hungarian\>\"", ",", 
+                RowBox[{"EmitSound", "[", "HUN", "]"}], ",", 
+                RowBox[{"ImageSize", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{"74", ",", "50"}], "}"}]}], ",", 
+                RowBox[{"Alignment", "\[Rule]", "Center"}]}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"Button", "[", 
+               RowBox[{"\"\<Flamenco\>\"", ",", 
+                RowBox[{"EmitSound", "[", "FLA", "]"}], ",", 
+                RowBox[{"ImageSize", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{"74", ",", "50"}], "}"}]}], ",", 
+                RowBox[{"Alignment", "\[Rule]", "Center"}]}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"Button", "[", 
+               RowBox[{"\"\<Hirajoshi\>\"", ",", 
+                RowBox[{"EmitSound", "[", "HIRA", "]"}], ",", 
+                RowBox[{"ImageSize", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{"74", ",", "50"}], "}"}]}], ",", 
+                RowBox[{"Alignment", "\[Rule]", "Center"}]}], "]"}]}], 
+             "\[IndentingNewLine]", "}"}], "}"}], "]"}], ",", 
+          "\[IndentingNewLine]", "\[IndentingNewLine]", 
+          RowBox[{"Grid", "[", 
+           RowBox[{"{", 
+            RowBox[{"{", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"Button", "[", 
+               RowBox[{"\"\<Ionian\>\"", ",", 
+                RowBox[{"EmitSound", "[", "MAJ", "]"}], ",", 
+                RowBox[{"ImageSize", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{"74", ",", "50"}], "}"}]}], ",", 
+                RowBox[{"Alignment", "\[Rule]", "Center"}]}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"Button", "[", 
+               RowBox[{"\"\<Dorian\>\"", ",", 
+                RowBox[{"EmitSound", "[", "DOR", "]"}], ",", 
+                RowBox[{"ImageSize", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{"74", ",", "50"}], "}"}]}], ",", 
+                RowBox[{"Alignment", "\[Rule]", "Center"}]}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"Button", "[", 
+               RowBox[{"\"\<Phrygian\>\"", ",", 
+                RowBox[{"EmitSound", "[", "PHY", "]"}], ",", 
+                RowBox[{"ImageSize", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{"74", ",", "50"}], "}"}]}], ",", 
+                RowBox[{"Alignment", "\[Rule]", "Center"}]}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"Button", "[", 
+               RowBox[{"\"\<Lydian\>\"", ",", 
+                RowBox[{"EmitSound", "[", "LYD", "]"}], ",", 
+                RowBox[{"ImageSize", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{"74", ",", "50"}], "}"}]}], ",", 
+                RowBox[{"Alignment", "\[Rule]", "Center"}]}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"Button", "[", 
+               RowBox[{"\"\<Mixolydian\>\"", ",", 
+                RowBox[{"EmitSound", "[", "MIX", "]"}], ",", 
+                RowBox[{"ImageSize", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{"74", ",", "50"}], "}"}]}], ",", 
+                RowBox[{"Alignment", "\[Rule]", "Center"}]}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"Button", "[", 
+               RowBox[{"\"\<Aeolian\>\"", ",", 
+                RowBox[{"EmitSound", "[", "NATMIN", "]"}], ",", 
+                RowBox[{"ImageSize", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{"74", ",", "50"}], "}"}]}], ",", 
+                RowBox[{"Alignment", "\[Rule]", "Center"}]}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"Button", "[", 
+               RowBox[{"\"\<Locrian\>\"", ",", 
+                RowBox[{"EmitSound", "[", "LOC", "]"}], ",", 
+                RowBox[{"ImageSize", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{"74", ",", "50"}], "}"}]}], ",", 
+                RowBox[{"Alignment", "\[Rule]", "Center"}]}], "]"}]}], 
+             "\[IndentingNewLine]", "}"}], "}"}], "]"}], ",", 
+          "\[IndentingNewLine]", "\[IndentingNewLine]", 
+          RowBox[{"Grid", "[", 
+           RowBox[{"{", 
+            RowBox[{"{", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"Button", "[", 
+               RowBox[{"\"\<Chromatic\>\"", ",", 
+                RowBox[{"EmitSound", "[", "CHRO", "]"}], ",", 
+                RowBox[{"ImageSize", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{"74", ",", "50"}], "}"}]}], ",", 
+                RowBox[{"Alignment", "\[Rule]", "Center"}]}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"Button", "[", 
+               RowBox[{"\"\<Pentatonic\\n(Major)\>\"", ",", 
+                RowBox[{"EmitSound", "[", "PENT", "]"}], ",", 
+                RowBox[{"ImageSize", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{"74", ",", "50"}], "}"}]}], ",", 
+                RowBox[{"Alignment", "\[Rule]", "Center"}]}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"Button", "[", 
+               RowBox[{"\"\<Altered\>\"", ",", 
+                RowBox[{"EmitSound", "[", "ALT", "]"}], ",", 
+                RowBox[{"ImageSize", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{"74", ",", "50"}], "}"}]}], ",", 
+                RowBox[{"Alignment", "\[Rule]", "Center"}]}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"Button", "[", 
+               RowBox[{"\"\<Half-\\nDiminished\>\"", ",", 
+                RowBox[{"EmitSound", "[", "HALF", "]"}], ",", 
+                RowBox[{"ImageSize", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{"74", ",", "50"}], "}"}]}], ",", 
+                RowBox[{"Alignment", "\[Rule]", "Center"}]}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"Button", "[", 
+               RowBox[{"\"\<Enigmatic\>\"", ",", 
+                RowBox[{"EmitSound", "[", "EN", "]"}], ",", 
+                RowBox[{"ImageSize", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{"74", ",", "50"}], "}"}]}], ",", 
+                RowBox[{"Alignment", "\[Rule]", "Center"}]}], "]"}]}], 
+             "\[IndentingNewLine]", "}"}], "}"}], "]"}]}], 
+         "\[IndentingNewLine]", "}"}], ",", 
+        RowBox[{"Spacings", "\[Rule]", "1.4"}]}], "]"}]}]}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"key", ",", "0", ",", "11", ",", "1", ",", 
+     RowBox[{"Appearance", "\[Rule]", " ", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   " ", 
+   RowBox[{"TrackedSymbols", "\[RuleDelayed]", 
+    RowBox[{"{", "key", "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGAQBmIQ/fetif12hTeOV2olXEH0JoGwxyD69/Jbz0F02s2W
++h1A+tV29gYQvWx3QTeI3pGwuA9ET5MqWgKin+jOWQ1W90RjE4hWX/twG4i+
+1nDyIIhe7r7qCIi2ML54CkTfNs96CKIXxZ5+B6KFmWKYdgLpZ75nuEH0tbdt
+siA6XX+7Ioh23nUGTG+L/qkFoi9Y7NQB0d8WrTYA0TzGDIYgehO7ngWIvjxX
+zBpE73Rs41um/MaRrdBSEETvqGu9DKIX1DFcBdGXiqfeBNF/Pn8B0y6Cnc9A
+tHfDLjDtsjF811og/U62HEwDALXEnc0=
+  "],
+ CellLabel->"In[1]:=",ExpressionUUID->"9c865193-6124-4fb4-82fd-7b80d175d7a3"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`key$$ = 0, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`key$$], 0, 11, 1}}, Typeset`size$$ = {
+    710., {250., 257.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`key$2430$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`key$$ = 0}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`key$$, $CellContext`key$2430$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      DynamicModule[{$CellContext`maj, $CellContext`MAJ, $CellContext`natmin, \
+$CellContext`NATMIN, $CellContext`harmin, $CellContext`HARMIN, \
+$CellContext`alt, $CellContext`ALT, $CellContext`blues, $CellContext`BLUES, \
+$CellContext`chro, $CellContext`CHRO, $CellContext`dor, $CellContext`DOR, \
+$CellContext`pent, $CellContext`PENT, $CellContext`melmin, \
+$CellContext`MELMIN, $CellContext`phy, $CellContext`PHY, $CellContext`lyd, \
+$CellContext`LYD, $CellContext`mix, $CellContext`MIX, $CellContext`loc, \
+$CellContext`LOC, $CellContext`aug, $CellContext`AUG, $CellContext`half, \
+$CellContext`HALF, $CellContext`harmaj, $CellContext`HARMAJ, \
+$CellContext`hun, $CellContext`HUN, $CellContext`hira, $CellContext`HIRA, \
+$CellContext`pro, $CellContext`PRO, $CellContext`tri, $CellContext`TRI, \
+$CellContext`whol, $CellContext`WHOL, $CellContext`fla, $CellContext`FLA, \
+$CellContext`en, $CellContext`EN}, $CellContext`maj = {$CellContext`key$$, \
+$CellContext`key$$ + 2, $CellContext`key$$ + 4, $CellContext`key$$ + 
+           5, $CellContext`key$$ + 7, $CellContext`key$$ + 
+           9, $CellContext`key$$ + 11, $CellContext`key$$ + 
+           12}; $CellContext`MAJ = 
+         Map[SoundNote, $CellContext`maj]; $CellContext`natmin = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           10, $CellContext`key$$ + 12}; $CellContext`NATMIN = 
+         Map[SoundNote, $CellContext`natmin]; $CellContext`harmin = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 12}; $CellContext`HARMIN = 
+         Map[SoundNote, $CellContext`harmin]; $CellContext`alt = \
+{$CellContext`key$$, $CellContext`key$$ + 1, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 4, $CellContext`key$$ + 
+           6, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           10, $CellContext`key$$ + 12}; $CellContext`ALT = 
+         Map[SoundNote, $CellContext`alt]; $CellContext`blues = \
+{$CellContext`key$$, $CellContext`key$$ + 3, $CellContext`key$$ + 
+           5, $CellContext`key$$ + 6, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 10, $CellContext`key$$ + 
+           12}; $CellContext`BLUES = 
+         Map[SoundNote, $CellContext`blues]; $CellContext`chro = \
+{$CellContext`key$$, $CellContext`key$$ + 1, $CellContext`key$$ + 
+           2, $CellContext`key$$ + 3, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           6, $CellContext`key$$ + 7, $CellContext`key$$ + 
+           8, $CellContext`key$$ + 9, $CellContext`key$$ + 
+           10, $CellContext`key$$ + 11, $CellContext`key$$ + 
+           12}; $CellContext`CHRO = 
+         Map[SoundNote, $CellContext`chro]; $CellContext`dor = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 9, $CellContext`key$$ + 
+           10, $CellContext`key$$ + 12}; $CellContext`DOR = 
+         Map[SoundNote, $CellContext`dor]; $CellContext`pent = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 7, $CellContext`key$$ + 
+           9, $CellContext`key$$ + 12}; $CellContext`PENT = 
+         Map[SoundNote, $CellContext`pent]; $CellContext`melmin = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 9, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 12, $CellContext`key$$ + 
+           10, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 
+           2, $CellContext`key$$}; $CellContext`MELMIN = 
+         Map[SoundNote, $CellContext`melmin]; $CellContext`phy = \
+{$CellContext`key$$, $CellContext`key$$ + 1, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           10, $CellContext`key$$ + 12}; $CellContext`PHY = 
+         Map[SoundNote, $CellContext`phy]; $CellContext`lyd = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 6, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 9, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 12}; $CellContext`LYD = 
+         Map[SoundNote, $CellContext`lyd]; $CellContext`mix = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 9, $CellContext`key$$ + 
+           10, $CellContext`key$$ + 12}; $CellContext`MIX = 
+         Map[SoundNote, $CellContext`mix]; $CellContext`loc = \
+{$CellContext`key$$, $CellContext`key$$ + 1, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           6, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           10, $CellContext`key$$ + 12}; $CellContext`LOC = 
+         Map[SoundNote, $CellContext`loc]; $CellContext`aug = \
+{$CellContext`key$$, $CellContext`key$$ + 3, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 7, $CellContext`key$$ + 
+           8, $CellContext`key$$ + 11, $CellContext`key$$ + 
+           12}; $CellContext`AUG = 
+         Map[SoundNote, $CellContext`aug]; $CellContext`half = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           6, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           10, $CellContext`key$$ + 12}; $CellContext`HALF = 
+         Map[SoundNote, $CellContext`half]; $CellContext`harmaj = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 12}; $CellContext`HARMAJ = 
+         Map[SoundNote, $CellContext`harmaj]; $CellContext`hun = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 6, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 12}; $CellContext`HUN = 
+         Map[SoundNote, $CellContext`hun]; $CellContext`hira = \
+{$CellContext`key$$, $CellContext`key$$ + 4, $CellContext`key$$ + 
+           6, $CellContext`key$$ + 7, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 12}; $CellContext`HIRA = 
+         Map[SoundNote, $CellContext`hira]; $CellContext`pro = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 6, $CellContext`key$$ + 
+           9, $CellContext`key$$ + 10, $CellContext`key$$ + 
+           12}; $CellContext`PRO = 
+         Map[SoundNote, $CellContext`pro]; $CellContext`tri = \
+{$CellContext`key$$, $CellContext`key$$ + 1, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 6, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 10, $CellContext`key$$ + 
+           12}; $CellContext`TRI = 
+         Map[SoundNote, $CellContext`tri]; $CellContext`whol = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 6, $CellContext`key$$ + 
+           8, $CellContext`key$$ + 10, $CellContext`key$$ + 
+           12}; $CellContext`WHOL = 
+         Map[SoundNote, $CellContext`whol]; $CellContext`fla = \
+{$CellContext`key$$, $CellContext`key$$ + 1, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 12}; $CellContext`FLA = 
+         Map[SoundNote, $CellContext`fla]; $CellContext`en = \
+{$CellContext`key$$, $CellContext`key$$ + 1, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 6, $CellContext`key$$ + 
+           8, $CellContext`key$$ + 10, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 12, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 10, $CellContext`key$$ + 
+           8, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 1, $CellContext`key$$}; $CellContext`EN = 
+         Map[SoundNote, $CellContext`en]; $CellContext`pers = \
+{$CellContext`key$$, $CellContext`key$$ + 1, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           6, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 12}; $CellContext`PERS = 
+         Map[SoundNote, $CellContext`pers]; Column[{
+           Style[
+           "Adjust the key using the slider above.\nkey = 0 -> C         key \
+= 1 -> C#/D\[Flat]     key = 2 -> D          key = 3 -> D#/E\[Flat]\nkey = 4 \
+-> E         key = 5 -> F         key = 6 -> F#/G\[Flat]      key = 7 -> G\n\
+key = 8 -> G#/A\[Flat]     key = 9 -> A         key = 10 -> A#/B\[Flat]     \
+key = 11 -> B"], 
+           Grid[{{
+              Button["Major", 
+               EmitSound[$CellContext`MAJ], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Harmonic\nMajor", 
+               EmitSound[$CellContext`HARMAJ], ImageSize -> {74, 50}, 
+               Alignment -> Center], 
+              Button["Natural\nMinor", 
+               EmitSound[$CellContext`NATMIN], ImageSize -> {74, 50}, 
+               Alignment -> Center], 
+              Button["Harmonic\nMinor", 
+               EmitSound[$CellContext`HARMIN], ImageSize -> {74, 50}, 
+               Alignment -> Center], 
+              Button["Melodic\nMinor", 
+               EmitSound[$CellContext`MELMIN], ImageSize -> {74, 50}, 
+               Alignment -> Center]}}], 
+           Grid[{{
+              Button["Whole Tone", 
+               EmitSound[$CellContext`WHOL], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Augmented", 
+               EmitSound[$CellContext`AUG], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Prometheus", 
+               EmitSound[$CellContext`PRO], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Blues", 
+               EmitSound[$CellContext`BLUES], ImageSize -> {74, 50}, 
+               Alignment -> Center], 
+              Button["Tritone", 
+               EmitSound[$CellContext`TRI], ImageSize -> {74, 50}, Alignment -> 
+               Center]}}], 
+           Grid[{{
+              Button["Persian", 
+               EmitSound[$CellContext`PERS], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Hungarian", 
+               EmitSound[$CellContext`HUN], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Flamenco", 
+               EmitSound[$CellContext`FLA], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Hirajoshi", 
+               EmitSound[$CellContext`HIRA], ImageSize -> {74, 50}, Alignment -> 
+               Center]}}], 
+           Grid[{{
+              Button["Ionian", 
+               EmitSound[$CellContext`MAJ], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Dorian", 
+               EmitSound[$CellContext`DOR], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Phrygian", 
+               EmitSound[$CellContext`PHY], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Lydian", 
+               EmitSound[$CellContext`LYD], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Mixolydian", 
+               EmitSound[$CellContext`MIX], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Aeolian", 
+               EmitSound[$CellContext`NATMIN], ImageSize -> {74, 50}, 
+               Alignment -> Center], 
+              Button["Locrian", 
+               EmitSound[$CellContext`LOC], ImageSize -> {74, 50}, Alignment -> 
+               Center]}}], 
+           Grid[{{
+              Button["Chromatic", 
+               EmitSound[$CellContext`CHRO], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Pentatonic\n(Major)", 
+               EmitSound[$CellContext`PENT], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Altered", 
+               EmitSound[$CellContext`ALT], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Half-\nDiminished", 
+               EmitSound[$CellContext`HALF], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Enigmatic", 
+               EmitSound[$CellContext`EN], ImageSize -> {74, 50}, Alignment -> 
+               Center]}}]}, Spacings -> 1.4]], 
+      "Specifications" :> {{$CellContext`key$$, 0, 11, 1, Appearance -> 
+         "Labeled"}}, "Options" :> {TrackedSymbols :> {$CellContext`key$$}}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{769., {304., 311.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.7768022631539793`*^9},
+ CellLabel->"Out[1]=",
+ CellID->7857036,ExpressionUUID->"04f4cbec-e649-4fad-b361-8f21d65b113f"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ManipulateCaptionSection",ExpressionUUID->"de30e472-7196-482d-a842-07fadaab6bdb"],
+
+Cell["\<\
+This Demonstration lets users hear almost every musical scale and every \
+musical mode by pressing on the appropriate button. When the \"key\" value is \
+adjusted, the scales are transposed to the appropriate key. The scales are \
+grouped into rows: the first row contains major and minor scales, the second \
+row contains hexatonic scales, the third row contains scales used in specific \
+music genres, the fourth row contains modes, and the final row contains \
+scales that did not fit into the above categories. Using this tool, musicians \
+can learn to recognize how different scales and modes sound in every key, \
+away from the instrument.\
+\>", "ManipulateCaption",
+ CellChangeTimes->{{3.775249009061904*^9, 3.775249009893111*^9}, {
+   3.7752501099706354`*^9, 3.77525011250148*^9}, {3.7752503330637093`*^9, 
+   3.7752503341809816`*^9}, {3.7752507836434216`*^9, 
+   3.7752507841375885`*^9}, {3.7752508553678017`*^9, 3.7752508573359985`*^9}, 
+   3.776788252577588*^9},ExpressionUUID->"08409b5f-f9a1-48c0-8007-\
+d03bd34e6029"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ThumbnailSection",ExpressionUUID->"e20e50b1-df63-412e-85b5-133be917b72a"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`key$$ = 0, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`key$$], 0, 11, 1}}, Typeset`size$$ = {
+    710., {250., 257.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`key$2430$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`key$$ = 0}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`key$$, $CellContext`key$2430$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      DynamicModule[{$CellContext`maj, $CellContext`MAJ, $CellContext`natmin, \
+$CellContext`NATMIN, $CellContext`harmin, $CellContext`HARMIN, \
+$CellContext`alt, $CellContext`ALT, $CellContext`blues, $CellContext`BLUES, \
+$CellContext`chro, $CellContext`CHRO, $CellContext`dor, $CellContext`DOR, \
+$CellContext`pent, $CellContext`PENT, $CellContext`melmin, \
+$CellContext`MELMIN, $CellContext`phy, $CellContext`PHY, $CellContext`lyd, \
+$CellContext`LYD, $CellContext`mix, $CellContext`MIX, $CellContext`loc, \
+$CellContext`LOC, $CellContext`aug, $CellContext`AUG, $CellContext`half, \
+$CellContext`HALF, $CellContext`harmaj, $CellContext`HARMAJ, \
+$CellContext`hun, $CellContext`HUN, $CellContext`hira, $CellContext`HIRA, \
+$CellContext`pro, $CellContext`PRO, $CellContext`tri, $CellContext`TRI, \
+$CellContext`whol, $CellContext`WHOL, $CellContext`fla, $CellContext`FLA, \
+$CellContext`en, $CellContext`EN}, $CellContext`maj = {$CellContext`key$$, \
+$CellContext`key$$ + 2, $CellContext`key$$ + 4, $CellContext`key$$ + 
+           5, $CellContext`key$$ + 7, $CellContext`key$$ + 
+           9, $CellContext`key$$ + 11, $CellContext`key$$ + 
+           12}; $CellContext`MAJ = 
+         Map[SoundNote, $CellContext`maj]; $CellContext`natmin = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           10, $CellContext`key$$ + 12}; $CellContext`NATMIN = 
+         Map[SoundNote, $CellContext`natmin]; $CellContext`harmin = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 12}; $CellContext`HARMIN = 
+         Map[SoundNote, $CellContext`harmin]; $CellContext`alt = \
+{$CellContext`key$$, $CellContext`key$$ + 1, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 4, $CellContext`key$$ + 
+           6, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           10, $CellContext`key$$ + 12}; $CellContext`ALT = 
+         Map[SoundNote, $CellContext`alt]; $CellContext`blues = \
+{$CellContext`key$$, $CellContext`key$$ + 3, $CellContext`key$$ + 
+           5, $CellContext`key$$ + 6, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 10, $CellContext`key$$ + 
+           12}; $CellContext`BLUES = 
+         Map[SoundNote, $CellContext`blues]; $CellContext`chro = \
+{$CellContext`key$$, $CellContext`key$$ + 1, $CellContext`key$$ + 
+           2, $CellContext`key$$ + 3, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           6, $CellContext`key$$ + 7, $CellContext`key$$ + 
+           8, $CellContext`key$$ + 9, $CellContext`key$$ + 
+           10, $CellContext`key$$ + 11, $CellContext`key$$ + 
+           12}; $CellContext`CHRO = 
+         Map[SoundNote, $CellContext`chro]; $CellContext`dor = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 9, $CellContext`key$$ + 
+           10, $CellContext`key$$ + 12}; $CellContext`DOR = 
+         Map[SoundNote, $CellContext`dor]; $CellContext`pent = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 7, $CellContext`key$$ + 
+           9, $CellContext`key$$ + 12}; $CellContext`PENT = 
+         Map[SoundNote, $CellContext`pent]; $CellContext`melmin = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 9, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 12, $CellContext`key$$ + 
+           10, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 
+           2, $CellContext`key$$}; $CellContext`MELMIN = 
+         Map[SoundNote, $CellContext`melmin]; $CellContext`phy = \
+{$CellContext`key$$, $CellContext`key$$ + 1, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           10, $CellContext`key$$ + 12}; $CellContext`PHY = 
+         Map[SoundNote, $CellContext`phy]; $CellContext`lyd = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 6, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 9, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 12}; $CellContext`LYD = 
+         Map[SoundNote, $CellContext`lyd]; $CellContext`mix = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 9, $CellContext`key$$ + 
+           10, $CellContext`key$$ + 12}; $CellContext`MIX = 
+         Map[SoundNote, $CellContext`mix]; $CellContext`loc = \
+{$CellContext`key$$, $CellContext`key$$ + 1, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           6, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           10, $CellContext`key$$ + 12}; $CellContext`LOC = 
+         Map[SoundNote, $CellContext`loc]; $CellContext`aug = \
+{$CellContext`key$$, $CellContext`key$$ + 3, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 7, $CellContext`key$$ + 
+           8, $CellContext`key$$ + 11, $CellContext`key$$ + 
+           12}; $CellContext`AUG = 
+         Map[SoundNote, $CellContext`aug]; $CellContext`half = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           6, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           10, $CellContext`key$$ + 12}; $CellContext`HALF = 
+         Map[SoundNote, $CellContext`half]; $CellContext`harmaj = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 12}; $CellContext`HARMAJ = 
+         Map[SoundNote, $CellContext`harmaj]; $CellContext`hun = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 6, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 12}; $CellContext`HUN = 
+         Map[SoundNote, $CellContext`hun]; $CellContext`hira = \
+{$CellContext`key$$, $CellContext`key$$ + 4, $CellContext`key$$ + 
+           6, $CellContext`key$$ + 7, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 12}; $CellContext`HIRA = 
+         Map[SoundNote, $CellContext`hira]; $CellContext`pro = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 6, $CellContext`key$$ + 
+           9, $CellContext`key$$ + 10, $CellContext`key$$ + 
+           12}; $CellContext`PRO = 
+         Map[SoundNote, $CellContext`pro]; $CellContext`tri = \
+{$CellContext`key$$, $CellContext`key$$ + 1, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 6, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 10, $CellContext`key$$ + 
+           12}; $CellContext`TRI = 
+         Map[SoundNote, $CellContext`tri]; $CellContext`whol = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 6, $CellContext`key$$ + 
+           8, $CellContext`key$$ + 10, $CellContext`key$$ + 
+           12}; $CellContext`WHOL = 
+         Map[SoundNote, $CellContext`whol]; $CellContext`fla = \
+{$CellContext`key$$, $CellContext`key$$ + 1, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 12}; $CellContext`FLA = 
+         Map[SoundNote, $CellContext`fla]; $CellContext`en = \
+{$CellContext`key$$, $CellContext`key$$ + 1, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 6, $CellContext`key$$ + 
+           8, $CellContext`key$$ + 10, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 12, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 10, $CellContext`key$$ + 
+           8, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 1, $CellContext`key$$}; $CellContext`EN = 
+         Map[SoundNote, $CellContext`en]; $CellContext`pers = \
+{$CellContext`key$$, $CellContext`key$$ + 1, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           6, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 12}; $CellContext`PERS = 
+         Map[SoundNote, $CellContext`pers]; Column[{
+           Style[
+           "Adjust the key using the slider above.\nkey = 0 -> C         key \
+= 1 -> C#/D\[Flat]     key = 2 -> D          key = 3 -> D#/E\[Flat]\nkey = 4 \
+-> E         key = 5 -> F         key = 6 -> F#/G\[Flat]      key = 7 -> G\n\
+key = 8 -> G#/A\[Flat]     key = 9 -> A         key = 10 -> A#/B\[Flat]     \
+key = 11 -> B"], 
+           Grid[{{
+              Button["Major", 
+               EmitSound[$CellContext`MAJ], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Harmonic\nMajor", 
+               EmitSound[$CellContext`HARMAJ], ImageSize -> {74, 50}, 
+               Alignment -> Center], 
+              Button["Natural\nMinor", 
+               EmitSound[$CellContext`NATMIN], ImageSize -> {74, 50}, 
+               Alignment -> Center], 
+              Button["Harmonic\nMinor", 
+               EmitSound[$CellContext`HARMIN], ImageSize -> {74, 50}, 
+               Alignment -> Center], 
+              Button["Melodic\nMinor", 
+               EmitSound[$CellContext`MELMIN], ImageSize -> {74, 50}, 
+               Alignment -> Center]}}], 
+           Grid[{{
+              Button["Whole Tone", 
+               EmitSound[$CellContext`WHOL], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Augmented", 
+               EmitSound[$CellContext`AUG], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Prometheus", 
+               EmitSound[$CellContext`PRO], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Blues", 
+               EmitSound[$CellContext`BLUES], ImageSize -> {74, 50}, 
+               Alignment -> Center], 
+              Button["Tritone", 
+               EmitSound[$CellContext`TRI], ImageSize -> {74, 50}, Alignment -> 
+               Center]}}], 
+           Grid[{{
+              Button["Persian", 
+               EmitSound[$CellContext`PERS], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Hungarian", 
+               EmitSound[$CellContext`HUN], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Flamenco", 
+               EmitSound[$CellContext`FLA], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Hirajoshi", 
+               EmitSound[$CellContext`HIRA], ImageSize -> {74, 50}, Alignment -> 
+               Center]}}], 
+           Grid[{{
+              Button["Ionian", 
+               EmitSound[$CellContext`MAJ], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Dorian", 
+               EmitSound[$CellContext`DOR], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Phrygian", 
+               EmitSound[$CellContext`PHY], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Lydian", 
+               EmitSound[$CellContext`LYD], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Mixolydian", 
+               EmitSound[$CellContext`MIX], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Aeolian", 
+               EmitSound[$CellContext`NATMIN], ImageSize -> {74, 50}, 
+               Alignment -> Center], 
+              Button["Locrian", 
+               EmitSound[$CellContext`LOC], ImageSize -> {74, 50}, Alignment -> 
+               Center]}}], 
+           Grid[{{
+              Button["Chromatic", 
+               EmitSound[$CellContext`CHRO], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Pentatonic\n(Major)", 
+               EmitSound[$CellContext`PENT], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Altered", 
+               EmitSound[$CellContext`ALT], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Half-\nDiminished", 
+               EmitSound[$CellContext`HALF], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Enigmatic", 
+               EmitSound[$CellContext`EN], ImageSize -> {74, 50}, Alignment -> 
+               Center]}}]}, Spacings -> 1.4]], 
+      "Specifications" :> {{$CellContext`key$$, 0, 11, 1, Appearance -> 
+         "Labeled"}}, "Options" :> {TrackedSymbols :> {$CellContext`key$$}}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{769., {304., 311.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.7768022631539793`*^9},
+ CellLabel->"Out[1]=",
+ CellID->141227715,ExpressionUUID->"9b1f41a0-8dba-493b-be0e-5ecb15142cb0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SnapshotsSection",ExpressionUUID->"e26d2506-3c0f-4ac1-824c-153e045767a0"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`key$$ = 0, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`key$$], 0, 11, 1}}, Typeset`size$$ = {
+    710., {250., 257.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`key$2430$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`key$$ = 0}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`key$$, $CellContext`key$2430$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      DynamicModule[{$CellContext`maj, $CellContext`MAJ, $CellContext`natmin, \
+$CellContext`NATMIN, $CellContext`harmin, $CellContext`HARMIN, \
+$CellContext`alt, $CellContext`ALT, $CellContext`blues, $CellContext`BLUES, \
+$CellContext`chro, $CellContext`CHRO, $CellContext`dor, $CellContext`DOR, \
+$CellContext`pent, $CellContext`PENT, $CellContext`melmin, \
+$CellContext`MELMIN, $CellContext`phy, $CellContext`PHY, $CellContext`lyd, \
+$CellContext`LYD, $CellContext`mix, $CellContext`MIX, $CellContext`loc, \
+$CellContext`LOC, $CellContext`aug, $CellContext`AUG, $CellContext`half, \
+$CellContext`HALF, $CellContext`harmaj, $CellContext`HARMAJ, \
+$CellContext`hun, $CellContext`HUN, $CellContext`hira, $CellContext`HIRA, \
+$CellContext`pro, $CellContext`PRO, $CellContext`tri, $CellContext`TRI, \
+$CellContext`whol, $CellContext`WHOL, $CellContext`fla, $CellContext`FLA, \
+$CellContext`en, $CellContext`EN}, $CellContext`maj = {$CellContext`key$$, \
+$CellContext`key$$ + 2, $CellContext`key$$ + 4, $CellContext`key$$ + 
+           5, $CellContext`key$$ + 7, $CellContext`key$$ + 
+           9, $CellContext`key$$ + 11, $CellContext`key$$ + 
+           12}; $CellContext`MAJ = 
+         Map[SoundNote, $CellContext`maj]; $CellContext`natmin = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           10, $CellContext`key$$ + 12}; $CellContext`NATMIN = 
+         Map[SoundNote, $CellContext`natmin]; $CellContext`harmin = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 12}; $CellContext`HARMIN = 
+         Map[SoundNote, $CellContext`harmin]; $CellContext`alt = \
+{$CellContext`key$$, $CellContext`key$$ + 1, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 4, $CellContext`key$$ + 
+           6, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           10, $CellContext`key$$ + 12}; $CellContext`ALT = 
+         Map[SoundNote, $CellContext`alt]; $CellContext`blues = \
+{$CellContext`key$$, $CellContext`key$$ + 3, $CellContext`key$$ + 
+           5, $CellContext`key$$ + 6, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 10, $CellContext`key$$ + 
+           12}; $CellContext`BLUES = 
+         Map[SoundNote, $CellContext`blues]; $CellContext`chro = \
+{$CellContext`key$$, $CellContext`key$$ + 1, $CellContext`key$$ + 
+           2, $CellContext`key$$ + 3, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           6, $CellContext`key$$ + 7, $CellContext`key$$ + 
+           8, $CellContext`key$$ + 9, $CellContext`key$$ + 
+           10, $CellContext`key$$ + 11, $CellContext`key$$ + 
+           12}; $CellContext`CHRO = 
+         Map[SoundNote, $CellContext`chro]; $CellContext`dor = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 9, $CellContext`key$$ + 
+           10, $CellContext`key$$ + 12}; $CellContext`DOR = 
+         Map[SoundNote, $CellContext`dor]; $CellContext`pent = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 7, $CellContext`key$$ + 
+           9, $CellContext`key$$ + 12}; $CellContext`PENT = 
+         Map[SoundNote, $CellContext`pent]; $CellContext`melmin = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 9, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 12, $CellContext`key$$ + 
+           10, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 
+           2, $CellContext`key$$}; $CellContext`MELMIN = 
+         Map[SoundNote, $CellContext`melmin]; $CellContext`phy = \
+{$CellContext`key$$, $CellContext`key$$ + 1, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           10, $CellContext`key$$ + 12}; $CellContext`PHY = 
+         Map[SoundNote, $CellContext`phy]; $CellContext`lyd = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 6, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 9, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 12}; $CellContext`LYD = 
+         Map[SoundNote, $CellContext`lyd]; $CellContext`mix = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 9, $CellContext`key$$ + 
+           10, $CellContext`key$$ + 12}; $CellContext`MIX = 
+         Map[SoundNote, $CellContext`mix]; $CellContext`loc = \
+{$CellContext`key$$, $CellContext`key$$ + 1, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           6, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           10, $CellContext`key$$ + 12}; $CellContext`LOC = 
+         Map[SoundNote, $CellContext`loc]; $CellContext`aug = \
+{$CellContext`key$$, $CellContext`key$$ + 3, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 7, $CellContext`key$$ + 
+           8, $CellContext`key$$ + 11, $CellContext`key$$ + 
+           12}; $CellContext`AUG = 
+         Map[SoundNote, $CellContext`aug]; $CellContext`half = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           6, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           10, $CellContext`key$$ + 12}; $CellContext`HALF = 
+         Map[SoundNote, $CellContext`half]; $CellContext`harmaj = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 12}; $CellContext`HARMAJ = 
+         Map[SoundNote, $CellContext`harmaj]; $CellContext`hun = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 6, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 12}; $CellContext`HUN = 
+         Map[SoundNote, $CellContext`hun]; $CellContext`hira = \
+{$CellContext`key$$, $CellContext`key$$ + 4, $CellContext`key$$ + 
+           6, $CellContext`key$$ + 7, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 12}; $CellContext`HIRA = 
+         Map[SoundNote, $CellContext`hira]; $CellContext`pro = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 6, $CellContext`key$$ + 
+           9, $CellContext`key$$ + 10, $CellContext`key$$ + 
+           12}; $CellContext`PRO = 
+         Map[SoundNote, $CellContext`pro]; $CellContext`tri = \
+{$CellContext`key$$, $CellContext`key$$ + 1, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 6, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 10, $CellContext`key$$ + 
+           12}; $CellContext`TRI = 
+         Map[SoundNote, $CellContext`tri]; $CellContext`whol = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 6, $CellContext`key$$ + 
+           8, $CellContext`key$$ + 10, $CellContext`key$$ + 
+           12}; $CellContext`WHOL = 
+         Map[SoundNote, $CellContext`whol]; $CellContext`fla = \
+{$CellContext`key$$, $CellContext`key$$ + 1, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 12}; $CellContext`FLA = 
+         Map[SoundNote, $CellContext`fla]; $CellContext`en = \
+{$CellContext`key$$, $CellContext`key$$ + 1, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 6, $CellContext`key$$ + 
+           8, $CellContext`key$$ + 10, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 12, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 10, $CellContext`key$$ + 
+           8, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 1, $CellContext`key$$}; $CellContext`EN = 
+         Map[SoundNote, $CellContext`en]; $CellContext`pers = \
+{$CellContext`key$$, $CellContext`key$$ + 1, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           6, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 12}; $CellContext`PERS = 
+         Map[SoundNote, $CellContext`pers]; Column[{
+           Style[
+           "Adjust the key using the slider above.\nkey = 0 -> C         key \
+= 1 -> C#/D\[Flat]     key = 2 -> D          key = 3 -> D#/E\[Flat]\nkey = 4 \
+-> E         key = 5 -> F         key = 6 -> F#/G\[Flat]      key = 7 -> G\n\
+key = 8 -> G#/A\[Flat]     key = 9 -> A         key = 10 -> A#/B\[Flat]     \
+key = 11 -> B"], 
+           Grid[{{
+              Button["Major", 
+               EmitSound[$CellContext`MAJ], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Harmonic\nMajor", 
+               EmitSound[$CellContext`HARMAJ], ImageSize -> {74, 50}, 
+               Alignment -> Center], 
+              Button["Natural\nMinor", 
+               EmitSound[$CellContext`NATMIN], ImageSize -> {74, 50}, 
+               Alignment -> Center], 
+              Button["Harmonic\nMinor", 
+               EmitSound[$CellContext`HARMIN], ImageSize -> {74, 50}, 
+               Alignment -> Center], 
+              Button["Melodic\nMinor", 
+               EmitSound[$CellContext`MELMIN], ImageSize -> {74, 50}, 
+               Alignment -> Center]}}], 
+           Grid[{{
+              Button["Whole Tone", 
+               EmitSound[$CellContext`WHOL], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Augmented", 
+               EmitSound[$CellContext`AUG], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Prometheus", 
+               EmitSound[$CellContext`PRO], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Blues", 
+               EmitSound[$CellContext`BLUES], ImageSize -> {74, 50}, 
+               Alignment -> Center], 
+              Button["Tritone", 
+               EmitSound[$CellContext`TRI], ImageSize -> {74, 50}, Alignment -> 
+               Center]}}], 
+           Grid[{{
+              Button["Persian", 
+               EmitSound[$CellContext`PERS], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Hungarian", 
+               EmitSound[$CellContext`HUN], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Flamenco", 
+               EmitSound[$CellContext`FLA], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Hirajoshi", 
+               EmitSound[$CellContext`HIRA], ImageSize -> {74, 50}, Alignment -> 
+               Center]}}], 
+           Grid[{{
+              Button["Ionian", 
+               EmitSound[$CellContext`MAJ], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Dorian", 
+               EmitSound[$CellContext`DOR], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Phrygian", 
+               EmitSound[$CellContext`PHY], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Lydian", 
+               EmitSound[$CellContext`LYD], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Mixolydian", 
+               EmitSound[$CellContext`MIX], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Aeolian", 
+               EmitSound[$CellContext`NATMIN], ImageSize -> {74, 50}, 
+               Alignment -> Center], 
+              Button["Locrian", 
+               EmitSound[$CellContext`LOC], ImageSize -> {74, 50}, Alignment -> 
+               Center]}}], 
+           Grid[{{
+              Button["Chromatic", 
+               EmitSound[$CellContext`CHRO], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Pentatonic\n(Major)", 
+               EmitSound[$CellContext`PENT], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Altered", 
+               EmitSound[$CellContext`ALT], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Half-\nDiminished", 
+               EmitSound[$CellContext`HALF], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Enigmatic", 
+               EmitSound[$CellContext`EN], ImageSize -> {74, 50}, Alignment -> 
+               Center]}}]}, Spacings -> 1.4]], 
+      "Specifications" :> {{$CellContext`key$$, 0, 11, 1, Appearance -> 
+         "Labeled"}}, "Options" :> {TrackedSymbols :> {$CellContext`key$$}}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{769., {304., 311.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.7768022631539793`*^9},
+ CellLabel->"Out[1]=",
+ CellID->348288181,ExpressionUUID->"642c7578-4126-4a51-9d8e-38fa687188a1"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`key$$ = 3, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`key$$], 0, 11, 1}}, Typeset`size$$ = {
+    710., {250., 257.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`key$2430$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`key$$ = 0}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`key$$, $CellContext`key$2430$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      DynamicModule[{$CellContext`maj, $CellContext`MAJ, $CellContext`natmin, \
+$CellContext`NATMIN, $CellContext`harmin, $CellContext`HARMIN, \
+$CellContext`alt, $CellContext`ALT, $CellContext`blues, $CellContext`BLUES, \
+$CellContext`chro, $CellContext`CHRO, $CellContext`dor, $CellContext`DOR, \
+$CellContext`pent, $CellContext`PENT, $CellContext`melmin, \
+$CellContext`MELMIN, $CellContext`phy, $CellContext`PHY, $CellContext`lyd, \
+$CellContext`LYD, $CellContext`mix, $CellContext`MIX, $CellContext`loc, \
+$CellContext`LOC, $CellContext`aug, $CellContext`AUG, $CellContext`half, \
+$CellContext`HALF, $CellContext`harmaj, $CellContext`HARMAJ, \
+$CellContext`hun, $CellContext`HUN, $CellContext`hira, $CellContext`HIRA, \
+$CellContext`pro, $CellContext`PRO, $CellContext`tri, $CellContext`TRI, \
+$CellContext`whol, $CellContext`WHOL, $CellContext`fla, $CellContext`FLA, \
+$CellContext`en, $CellContext`EN}, $CellContext`maj = {$CellContext`key$$, \
+$CellContext`key$$ + 2, $CellContext`key$$ + 4, $CellContext`key$$ + 
+           5, $CellContext`key$$ + 7, $CellContext`key$$ + 
+           9, $CellContext`key$$ + 11, $CellContext`key$$ + 
+           12}; $CellContext`MAJ = 
+         Map[SoundNote, $CellContext`maj]; $CellContext`natmin = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           10, $CellContext`key$$ + 12}; $CellContext`NATMIN = 
+         Map[SoundNote, $CellContext`natmin]; $CellContext`harmin = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 12}; $CellContext`HARMIN = 
+         Map[SoundNote, $CellContext`harmin]; $CellContext`alt = \
+{$CellContext`key$$, $CellContext`key$$ + 1, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 4, $CellContext`key$$ + 
+           6, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           10, $CellContext`key$$ + 12}; $CellContext`ALT = 
+         Map[SoundNote, $CellContext`alt]; $CellContext`blues = \
+{$CellContext`key$$, $CellContext`key$$ + 3, $CellContext`key$$ + 
+           5, $CellContext`key$$ + 6, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 10, $CellContext`key$$ + 
+           12}; $CellContext`BLUES = 
+         Map[SoundNote, $CellContext`blues]; $CellContext`chro = \
+{$CellContext`key$$, $CellContext`key$$ + 1, $CellContext`key$$ + 
+           2, $CellContext`key$$ + 3, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           6, $CellContext`key$$ + 7, $CellContext`key$$ + 
+           8, $CellContext`key$$ + 9, $CellContext`key$$ + 
+           10, $CellContext`key$$ + 11, $CellContext`key$$ + 
+           12}; $CellContext`CHRO = 
+         Map[SoundNote, $CellContext`chro]; $CellContext`dor = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 9, $CellContext`key$$ + 
+           10, $CellContext`key$$ + 12}; $CellContext`DOR = 
+         Map[SoundNote, $CellContext`dor]; $CellContext`pent = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 7, $CellContext`key$$ + 
+           9, $CellContext`key$$ + 12}; $CellContext`PENT = 
+         Map[SoundNote, $CellContext`pent]; $CellContext`melmin = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 9, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 12, $CellContext`key$$ + 
+           10, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 
+           2, $CellContext`key$$}; $CellContext`MELMIN = 
+         Map[SoundNote, $CellContext`melmin]; $CellContext`phy = \
+{$CellContext`key$$, $CellContext`key$$ + 1, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           10, $CellContext`key$$ + 12}; $CellContext`PHY = 
+         Map[SoundNote, $CellContext`phy]; $CellContext`lyd = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 6, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 9, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 12}; $CellContext`LYD = 
+         Map[SoundNote, $CellContext`lyd]; $CellContext`mix = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 9, $CellContext`key$$ + 
+           10, $CellContext`key$$ + 12}; $CellContext`MIX = 
+         Map[SoundNote, $CellContext`mix]; $CellContext`loc = \
+{$CellContext`key$$, $CellContext`key$$ + 1, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           6, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           10, $CellContext`key$$ + 12}; $CellContext`LOC = 
+         Map[SoundNote, $CellContext`loc]; $CellContext`aug = \
+{$CellContext`key$$, $CellContext`key$$ + 3, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 7, $CellContext`key$$ + 
+           8, $CellContext`key$$ + 11, $CellContext`key$$ + 
+           12}; $CellContext`AUG = 
+         Map[SoundNote, $CellContext`aug]; $CellContext`half = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           6, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           10, $CellContext`key$$ + 12}; $CellContext`HALF = 
+         Map[SoundNote, $CellContext`half]; $CellContext`harmaj = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 12}; $CellContext`HARMAJ = 
+         Map[SoundNote, $CellContext`harmaj]; $CellContext`hun = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 6, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 12}; $CellContext`HUN = 
+         Map[SoundNote, $CellContext`hun]; $CellContext`hira = \
+{$CellContext`key$$, $CellContext`key$$ + 4, $CellContext`key$$ + 
+           6, $CellContext`key$$ + 7, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 12}; $CellContext`HIRA = 
+         Map[SoundNote, $CellContext`hira]; $CellContext`pro = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 6, $CellContext`key$$ + 
+           9, $CellContext`key$$ + 10, $CellContext`key$$ + 
+           12}; $CellContext`PRO = 
+         Map[SoundNote, $CellContext`pro]; $CellContext`tri = \
+{$CellContext`key$$, $CellContext`key$$ + 1, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 6, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 10, $CellContext`key$$ + 
+           12}; $CellContext`TRI = 
+         Map[SoundNote, $CellContext`tri]; $CellContext`whol = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 6, $CellContext`key$$ + 
+           8, $CellContext`key$$ + 10, $CellContext`key$$ + 
+           12}; $CellContext`WHOL = 
+         Map[SoundNote, $CellContext`whol]; $CellContext`fla = \
+{$CellContext`key$$, $CellContext`key$$ + 1, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 12}; $CellContext`FLA = 
+         Map[SoundNote, $CellContext`fla]; $CellContext`en = \
+{$CellContext`key$$, $CellContext`key$$ + 1, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 6, $CellContext`key$$ + 
+           8, $CellContext`key$$ + 10, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 12, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 10, $CellContext`key$$ + 
+           8, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 1, $CellContext`key$$}; $CellContext`EN = 
+         Map[SoundNote, $CellContext`en]; $CellContext`pers = \
+{$CellContext`key$$, $CellContext`key$$ + 1, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           6, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 12}; $CellContext`PERS = 
+         Map[SoundNote, $CellContext`pers]; Column[{
+           Style[
+           "Adjust the key using the slider above.\nkey = 0 -> C         key \
+= 1 -> C#/D\[Flat]     key = 2 -> D          key = 3 -> D#/E\[Flat]\nkey = 4 \
+-> E         key = 5 -> F         key = 6 -> F#/G\[Flat]      key = 7 -> G\n\
+key = 8 -> G#/A\[Flat]     key = 9 -> A         key = 10 -> A#/B\[Flat]     \
+key = 11 -> B"], 
+           Grid[{{
+              Button["Major", 
+               EmitSound[$CellContext`MAJ], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Harmonic\nMajor", 
+               EmitSound[$CellContext`HARMAJ], ImageSize -> {74, 50}, 
+               Alignment -> Center], 
+              Button["Natural\nMinor", 
+               EmitSound[$CellContext`NATMIN], ImageSize -> {74, 50}, 
+               Alignment -> Center], 
+              Button["Harmonic\nMinor", 
+               EmitSound[$CellContext`HARMIN], ImageSize -> {74, 50}, 
+               Alignment -> Center], 
+              Button["Melodic\nMinor", 
+               EmitSound[$CellContext`MELMIN], ImageSize -> {74, 50}, 
+               Alignment -> Center]}}], 
+           Grid[{{
+              Button["Whole Tone", 
+               EmitSound[$CellContext`WHOL], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Augmented", 
+               EmitSound[$CellContext`AUG], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Prometheus", 
+               EmitSound[$CellContext`PRO], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Blues", 
+               EmitSound[$CellContext`BLUES], ImageSize -> {74, 50}, 
+               Alignment -> Center], 
+              Button["Tritone", 
+               EmitSound[$CellContext`TRI], ImageSize -> {74, 50}, Alignment -> 
+               Center]}}], 
+           Grid[{{
+              Button["Persian", 
+               EmitSound[$CellContext`PERS], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Hungarian", 
+               EmitSound[$CellContext`HUN], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Flamenco", 
+               EmitSound[$CellContext`FLA], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Hirajoshi", 
+               EmitSound[$CellContext`HIRA], ImageSize -> {74, 50}, Alignment -> 
+               Center]}}], 
+           Grid[{{
+              Button["Ionian", 
+               EmitSound[$CellContext`MAJ], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Dorian", 
+               EmitSound[$CellContext`DOR], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Phrygian", 
+               EmitSound[$CellContext`PHY], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Lydian", 
+               EmitSound[$CellContext`LYD], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Mixolydian", 
+               EmitSound[$CellContext`MIX], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Aeolian", 
+               EmitSound[$CellContext`NATMIN], ImageSize -> {74, 50}, 
+               Alignment -> Center], 
+              Button["Locrian", 
+               EmitSound[$CellContext`LOC], ImageSize -> {74, 50}, Alignment -> 
+               Center]}}], 
+           Grid[{{
+              Button["Chromatic", 
+               EmitSound[$CellContext`CHRO], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Pentatonic\n(Major)", 
+               EmitSound[$CellContext`PENT], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Altered", 
+               EmitSound[$CellContext`ALT], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Half-\nDiminished", 
+               EmitSound[$CellContext`HALF], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Enigmatic", 
+               EmitSound[$CellContext`EN], ImageSize -> {74, 50}, Alignment -> 
+               Center]}}]}, Spacings -> 1.4]], 
+      "Specifications" :> {{$CellContext`key$$, 0, 11, 1, Appearance -> 
+         "Labeled"}}, "Options" :> {TrackedSymbols :> {$CellContext`key$$}}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{769., {304., 311.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.7768022631539793`*^9},
+ CellLabel->"Out[1]=",
+ CellID->199332245,ExpressionUUID->"4c023be0-2ac4-4388-adf2-21cb6c56dd03"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`key$$ = 8, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`key$$], 0, 11, 1}}, Typeset`size$$ = {
+    710., {250., 257.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`key$2430$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`key$$ = 0}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`key$$, $CellContext`key$2430$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      DynamicModule[{$CellContext`maj, $CellContext`MAJ, $CellContext`natmin, \
+$CellContext`NATMIN, $CellContext`harmin, $CellContext`HARMIN, \
+$CellContext`alt, $CellContext`ALT, $CellContext`blues, $CellContext`BLUES, \
+$CellContext`chro, $CellContext`CHRO, $CellContext`dor, $CellContext`DOR, \
+$CellContext`pent, $CellContext`PENT, $CellContext`melmin, \
+$CellContext`MELMIN, $CellContext`phy, $CellContext`PHY, $CellContext`lyd, \
+$CellContext`LYD, $CellContext`mix, $CellContext`MIX, $CellContext`loc, \
+$CellContext`LOC, $CellContext`aug, $CellContext`AUG, $CellContext`half, \
+$CellContext`HALF, $CellContext`harmaj, $CellContext`HARMAJ, \
+$CellContext`hun, $CellContext`HUN, $CellContext`hira, $CellContext`HIRA, \
+$CellContext`pro, $CellContext`PRO, $CellContext`tri, $CellContext`TRI, \
+$CellContext`whol, $CellContext`WHOL, $CellContext`fla, $CellContext`FLA, \
+$CellContext`en, $CellContext`EN}, $CellContext`maj = {$CellContext`key$$, \
+$CellContext`key$$ + 2, $CellContext`key$$ + 4, $CellContext`key$$ + 
+           5, $CellContext`key$$ + 7, $CellContext`key$$ + 
+           9, $CellContext`key$$ + 11, $CellContext`key$$ + 
+           12}; $CellContext`MAJ = 
+         Map[SoundNote, $CellContext`maj]; $CellContext`natmin = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           10, $CellContext`key$$ + 12}; $CellContext`NATMIN = 
+         Map[SoundNote, $CellContext`natmin]; $CellContext`harmin = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 12}; $CellContext`HARMIN = 
+         Map[SoundNote, $CellContext`harmin]; $CellContext`alt = \
+{$CellContext`key$$, $CellContext`key$$ + 1, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 4, $CellContext`key$$ + 
+           6, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           10, $CellContext`key$$ + 12}; $CellContext`ALT = 
+         Map[SoundNote, $CellContext`alt]; $CellContext`blues = \
+{$CellContext`key$$, $CellContext`key$$ + 3, $CellContext`key$$ + 
+           5, $CellContext`key$$ + 6, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 10, $CellContext`key$$ + 
+           12}; $CellContext`BLUES = 
+         Map[SoundNote, $CellContext`blues]; $CellContext`chro = \
+{$CellContext`key$$, $CellContext`key$$ + 1, $CellContext`key$$ + 
+           2, $CellContext`key$$ + 3, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           6, $CellContext`key$$ + 7, $CellContext`key$$ + 
+           8, $CellContext`key$$ + 9, $CellContext`key$$ + 
+           10, $CellContext`key$$ + 11, $CellContext`key$$ + 
+           12}; $CellContext`CHRO = 
+         Map[SoundNote, $CellContext`chro]; $CellContext`dor = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 9, $CellContext`key$$ + 
+           10, $CellContext`key$$ + 12}; $CellContext`DOR = 
+         Map[SoundNote, $CellContext`dor]; $CellContext`pent = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 7, $CellContext`key$$ + 
+           9, $CellContext`key$$ + 12}; $CellContext`PENT = 
+         Map[SoundNote, $CellContext`pent]; $CellContext`melmin = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 9, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 12, $CellContext`key$$ + 
+           10, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 
+           2, $CellContext`key$$}; $CellContext`MELMIN = 
+         Map[SoundNote, $CellContext`melmin]; $CellContext`phy = \
+{$CellContext`key$$, $CellContext`key$$ + 1, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           10, $CellContext`key$$ + 12}; $CellContext`PHY = 
+         Map[SoundNote, $CellContext`phy]; $CellContext`lyd = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 6, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 9, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 12}; $CellContext`LYD = 
+         Map[SoundNote, $CellContext`lyd]; $CellContext`mix = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 9, $CellContext`key$$ + 
+           10, $CellContext`key$$ + 12}; $CellContext`MIX = 
+         Map[SoundNote, $CellContext`mix]; $CellContext`loc = \
+{$CellContext`key$$, $CellContext`key$$ + 1, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           6, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           10, $CellContext`key$$ + 12}; $CellContext`LOC = 
+         Map[SoundNote, $CellContext`loc]; $CellContext`aug = \
+{$CellContext`key$$, $CellContext`key$$ + 3, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 7, $CellContext`key$$ + 
+           8, $CellContext`key$$ + 11, $CellContext`key$$ + 
+           12}; $CellContext`AUG = 
+         Map[SoundNote, $CellContext`aug]; $CellContext`half = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           6, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           10, $CellContext`key$$ + 12}; $CellContext`HALF = 
+         Map[SoundNote, $CellContext`half]; $CellContext`harmaj = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 12}; $CellContext`HARMAJ = 
+         Map[SoundNote, $CellContext`harmaj]; $CellContext`hun = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           3, $CellContext`key$$ + 6, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 12}; $CellContext`HUN = 
+         Map[SoundNote, $CellContext`hun]; $CellContext`hira = \
+{$CellContext`key$$, $CellContext`key$$ + 4, $CellContext`key$$ + 
+           6, $CellContext`key$$ + 7, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 12}; $CellContext`HIRA = 
+         Map[SoundNote, $CellContext`hira]; $CellContext`pro = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 6, $CellContext`key$$ + 
+           9, $CellContext`key$$ + 10, $CellContext`key$$ + 
+           12}; $CellContext`PRO = 
+         Map[SoundNote, $CellContext`pro]; $CellContext`tri = \
+{$CellContext`key$$, $CellContext`key$$ + 1, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 6, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 10, $CellContext`key$$ + 
+           12}; $CellContext`TRI = 
+         Map[SoundNote, $CellContext`tri]; $CellContext`whol = \
+{$CellContext`key$$, $CellContext`key$$ + 2, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 6, $CellContext`key$$ + 
+           8, $CellContext`key$$ + 10, $CellContext`key$$ + 
+           12}; $CellContext`WHOL = 
+         Map[SoundNote, $CellContext`whol]; $CellContext`fla = \
+{$CellContext`key$$, $CellContext`key$$ + 1, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           7, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 12}; $CellContext`FLA = 
+         Map[SoundNote, $CellContext`fla]; $CellContext`en = \
+{$CellContext`key$$, $CellContext`key$$ + 1, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 6, $CellContext`key$$ + 
+           8, $CellContext`key$$ + 10, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 12, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 10, $CellContext`key$$ + 
+           8, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 1, $CellContext`key$$}; $CellContext`EN = 
+         Map[SoundNote, $CellContext`en]; $CellContext`pers = \
+{$CellContext`key$$, $CellContext`key$$ + 1, $CellContext`key$$ + 
+           4, $CellContext`key$$ + 5, $CellContext`key$$ + 
+           6, $CellContext`key$$ + 8, $CellContext`key$$ + 
+           11, $CellContext`key$$ + 12}; $CellContext`PERS = 
+         Map[SoundNote, $CellContext`pers]; Column[{
+           Style[
+           "Adjust the key using the slider above.\nkey = 0 -> C         key \
+= 1 -> C#/D\[Flat]     key = 2 -> D          key = 3 -> D#/E\[Flat]\nkey = 4 \
+-> E         key = 5 -> F         key = 6 -> F#/G\[Flat]      key = 7 -> G\n\
+key = 8 -> G#/A\[Flat]     key = 9 -> A         key = 10 -> A#/B\[Flat]     \
+key = 11 -> B"], 
+           Grid[{{
+              Button["Major", 
+               EmitSound[$CellContext`MAJ], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Harmonic\nMajor", 
+               EmitSound[$CellContext`HARMAJ], ImageSize -> {74, 50}, 
+               Alignment -> Center], 
+              Button["Natural\nMinor", 
+               EmitSound[$CellContext`NATMIN], ImageSize -> {74, 50}, 
+               Alignment -> Center], 
+              Button["Harmonic\nMinor", 
+               EmitSound[$CellContext`HARMIN], ImageSize -> {74, 50}, 
+               Alignment -> Center], 
+              Button["Melodic\nMinor", 
+               EmitSound[$CellContext`MELMIN], ImageSize -> {74, 50}, 
+               Alignment -> Center]}}], 
+           Grid[{{
+              Button["Whole Tone", 
+               EmitSound[$CellContext`WHOL], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Augmented", 
+               EmitSound[$CellContext`AUG], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Prometheus", 
+               EmitSound[$CellContext`PRO], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Blues", 
+               EmitSound[$CellContext`BLUES], ImageSize -> {74, 50}, 
+               Alignment -> Center], 
+              Button["Tritone", 
+               EmitSound[$CellContext`TRI], ImageSize -> {74, 50}, Alignment -> 
+               Center]}}], 
+           Grid[{{
+              Button["Persian", 
+               EmitSound[$CellContext`PERS], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Hungarian", 
+               EmitSound[$CellContext`HUN], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Flamenco", 
+               EmitSound[$CellContext`FLA], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Hirajoshi", 
+               EmitSound[$CellContext`HIRA], ImageSize -> {74, 50}, Alignment -> 
+               Center]}}], 
+           Grid[{{
+              Button["Ionian", 
+               EmitSound[$CellContext`MAJ], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Dorian", 
+               EmitSound[$CellContext`DOR], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Phrygian", 
+               EmitSound[$CellContext`PHY], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Lydian", 
+               EmitSound[$CellContext`LYD], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Mixolydian", 
+               EmitSound[$CellContext`MIX], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Aeolian", 
+               EmitSound[$CellContext`NATMIN], ImageSize -> {74, 50}, 
+               Alignment -> Center], 
+              Button["Locrian", 
+               EmitSound[$CellContext`LOC], ImageSize -> {74, 50}, Alignment -> 
+               Center]}}], 
+           Grid[{{
+              Button["Chromatic", 
+               EmitSound[$CellContext`CHRO], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Pentatonic\n(Major)", 
+               EmitSound[$CellContext`PENT], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Altered", 
+               EmitSound[$CellContext`ALT], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Half-\nDiminished", 
+               EmitSound[$CellContext`HALF], ImageSize -> {74, 50}, Alignment -> 
+               Center], 
+              Button["Enigmatic", 
+               EmitSound[$CellContext`EN], ImageSize -> {74, 50}, Alignment -> 
+               Center]}}]}, Spacings -> 1.4]], 
+      "Specifications" :> {{$CellContext`key$$, 0, 11, 1, Appearance -> 
+         "Labeled"}}, "Options" :> {TrackedSymbols :> {$CellContext`key$$}}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{769., {304., 311.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.7768022631539793`*^9},
+ CellLabel->"Out[1]=",
+ CellID->337613204,ExpressionUUID->"932ecda1-71b8-4c11-b6af-ea95cbebd93c"]
+}, Open  ]],
+
+Cell["", "DetailsSection",ExpressionUUID->"5fddca3f-4c6f-466a-aa45-a2d3d5e00dd0"],
+
+Cell[CellGroupData[{
+
+Cell["", "ControlSuggestionsSection",ExpressionUUID->"daee7bb3-c9ad-432c-9a5e-e361bfa1b8eb"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[
+   " Resize Images",ExpressionUUID->"e436c76d-105c-401c-9999-53c58b272b96"]}],
+  "\"Click inside an image to reveal its orange resize frame.\\nDrag any of \
+the orange resize handles to resize the image.\""]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->
+  "ResizeImages",ExpressionUUID->"72c34e2b-528e-4647-9fd7-d5ccd282aa7e"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[
+   " Rotate and Zoom in 3D",ExpressionUUID->
+    "c07c7c3b-7434-4d0c-8b1a-751cd2606684"]}],
+  RowBox[{
+   "\"Drag a 3D graphic to rotate it. Starting the drag near the center \
+tumbles\\nthe graphic; starting near a corner turns it parallel to the plane \
+of the screen.\\nHold down \"", 
+    FrameBox[
+    "Ctrl", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" (or \"", 
+    FrameBox[
+    "Cmd", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], 
+    "\" on Mac) and drag up and down to zoom.\""}]]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->
+  "RotateAndZoomIn3D",ExpressionUUID->"a1ded56a-bc0c-4de1-b76c-65a48a8f2706"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[
+   " Drag Locators",ExpressionUUID->"a74d7673-140f-4ec4-a004-de1bae1e9387"]}],
+  RowBox[{"\"Drag any locator (\"", 
+    GraphicsBox[
+     LocatorBox[
+      Scaled[{0.5, 0.5}]], ImageSize -> 20], 
+    "\", etc.) to move it around.\""}]]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->
+  "DragLocators",ExpressionUUID->"96da3af5-cb02-4207-b5dd-dbc7379eea5e"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[
+   " Create and Delete Locators",ExpressionUUID->
+    "c9da71f2-84c7-480b-bd14-f1f0c8368a00"]}],
+  RowBox[{"\"Insert a new locator in the graphic by holding down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], 
+    "\" key\\nand clicking where you want it to be. Delete a locator by \
+clicking it\\nwhile holding down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" key.\""}]]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->
+  "CreateAndDeleteLocators",ExpressionUUID->"fa978339-dc8a-425c-8de8-\
+5692bc3c2b79"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[
+   " Slider Zoom",ExpressionUUID->"2c5f3312-77ec-4fff-8c71-e1cce1a022b6"]}],
+  RowBox[{"\"Hold down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], 
+    "\" key while moving a slider to make fine adjustments in the slider \
+value.\\nHold \"", 
+    FrameBox[
+    "Ctrl", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" and/or \"", 
+    FrameBox[
+    "Shift", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" at the same time as \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], 
+    "\" to make ever finer adjustments.\""}]]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->
+  "SliderZoom",ExpressionUUID->"6fec462b-2fc7-4642-aee1-b25a3fa468a5"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[
+   " Gamepad Controls",ExpressionUUID->
+    "3d4fcf39-3732-41e4-ae68-b9b87c807e77"]}],
+  "\"Control this Demonstration with a gamepad or other\\nhuman interface \
+device connected to your computer.\""]], "ControlSuggestions",
+ CellChangeTimes->{3.35696210375764*^9, 3.3895522232313623`*^9},
+ FontFamily->"Verdana",
+ CellTags->
+  "GamepadControls",ExpressionUUID->"6eeac2aa-4826-4819-acdd-d3b276978f95"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[
+   " Automatic Animation",ExpressionUUID->
+    "0b01f873-51ec-47c4-b81a-9afdac337165"]}],
+  RowBox[{"\"Animate a slider in this Demonstration by clicking the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJzzTSzJSM1NLMlMTlRwL0osyMhMLlZwyy8CCjEzMjAwcIKwAgOI/R/IhBKc\n\
+/4EAyGAG0f+nTZsGwgysIJIRKsWKLAXGIHFmEpUgLADxWUAkI24jZs+eTaEt\n\
+IG+wQKRmzJgBlYf5lhEA30OqWA=="], "Graphics", ImageSize -> {9, 9}, ImageMargins -> 
+      0, CellBaseline -> Baseline], BoxBaselineShift -> 0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"button\\nnext to the slider, and then clicking the play button that \
+appears.\\nAnimate all controls by selecting \"", 
+    StyleBox["Autorun", FontWeight -> "Bold"], "\" from the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJyNULENwyAQfEySIlMwTVJlCGRFsosokeNtqBmDBagoaZjAI1C8/8GUUUC6\n\
+57h7cQ8PvU7Pl17nUav7oj/TPH7V7b2QJAUAXBkKmCPRowxICy64bRvGGNF7\n\
+X8CctGoDSN4xhIDGGDhzFXwUh3/ClBKrDQPmnGXtI6u0OOd+tZBVUqy1xSaH\n\
+UqiK6pPe4XdEdAz6563tx/gejuORGMxJaz8mdpJn7hc="], "Graphics", 
+      ImageSize -> {10, 10}, ImageMargins -> 0, CellBaseline -> Baseline], 
+     BoxBaselineShift -> 0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"menu.\""}]]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->
+  "AutomaticAnimation",ExpressionUUID->"9ba00148-ce37-4f63-b700-240fa3d7d6b2"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[
+   " Bookmark Animation",ExpressionUUID->
+    "55e8e5d9-8ef3-4580-a957-dc29a4571fae"]}],
+  RowBox[{
+   "\"See a prepared animation of this Demonstration by selecting\\n\"", 
+    StyleBox["Animate Bookmarks", FontWeight -> "Bold"], "\" from the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJyNULENwyAQfEySIlMwTVJlCGRFsosokeNtqBmDBagoaZjAI1C8/8GUUUC6\n\
+57h7cQ8PvU7Pl17nUav7oj/TPH7V7b2QJAUAXBkKmCPRowxICy64bRvGGNF7\n\
+X8CctGoDSN4xhIDGGDhzFXwUh3/ClBKrDQPmnGXtI6u0OOd+tZBVUqy1xSaH\n\
+UqiK6pPe4XdEdAz6563tx/gejuORGMxJaz8mdpJn7hc="], "Graphics", 
+      ImageSize -> {10, 10}, ImageMargins -> 0, CellBaseline -> Baseline], 
+     BoxBaselineShift -> 0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"menu.\""}]]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->
+  "BookmarkAnimation",ExpressionUUID->"479973b8-bc6c-42ad-8adf-73bcb4a48351"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SearchTermsSection",ExpressionUUID->"7851480f-83a6-4a72-b2a0-effbd91cf441"],
+
+Cell["musical scales", "SearchTerms",
+ CellChangeTimes->{{3.775250555900592*^9, 3.7752505887255383`*^9}},
+ CellID->55058426,ExpressionUUID->"4f6deb27-36fd-425e-99ee-95edb8720aae"],
+
+Cell["scales in music", "SearchTerms",
+ CellChangeTimes->{{3.775250705731372*^9, 3.775250707380477*^9}},
+ CellID->585498338,ExpressionUUID->"2b50cc27-94f4-4b9a-942e-9b615da1cdcd"],
+
+Cell["musical modes", "SearchTerms",
+ CellChangeTimes->{{3.775250590851595*^9, 3.7752505921329546`*^9}},
+ CellID->61080,ExpressionUUID->"8c9f67e5-6c7d-4a9f-822c-bc2c9054320d"],
+
+Cell["modes in music", "SearchTerms",
+ CellChangeTimes->{{3.7752507091555915`*^9, 3.7752507104461603`*^9}},
+ CellID->16179203,ExpressionUUID->"20e55b83-1002-49ef-b752-b017be7c3d7f"],
+
+Cell["transposition", "SearchTerms",
+ CellChangeTimes->{{3.775250657458561*^9, 3.7752506593646593`*^9}},
+ CellID->9836192,ExpressionUUID->"90155c95-793f-410b-955a-be66b23da02f"],
+
+Cell["audio", "SearchTerms",
+ CellChangeTimes->{{3.7752506868221807`*^9, 3.775250687213748*^9}},
+ CellID->108475840,ExpressionUUID->"feb0a3da-9b2d-42a0-afcf-712f9a504214"],
+
+Cell["practice", "SearchTerms",
+ CellChangeTimes->{{3.7752506893826003`*^9, 3.7752506927047606`*^9}},
+ CellID->661220360,ExpressionUUID->"95b63789-e6f9-412d-8986-65a4296ba88a"],
+
+Cell["music theory", "SearchTerms",
+ CellChangeTimes->{{3.775250698898363*^9, 3.7752507003880796`*^9}},
+ CellID->53142529,ExpressionUUID->"64e24bca-5539-440c-99bd-ec815a892dbb"]
+}, Open  ]],
+
+Cell["", "RelatedLinksSection",ExpressionUUID->"5d62f2fd-4910-4141-a894-931a3a45c493"],
+
+Cell[CellGroupData[{
+
+Cell["", "AuthorSection",ExpressionUUID->"2c5848e9-cb24-4544-9464-1222b7912f9a"],
+
+Cell[TextData[{
+ "Contributed by: ",
+ ButtonBox["Won Yang",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/author.html?author=Won+Yang"], 
+    None},
+  ButtonNote->"http://demonstrations.wolfram.com/author.html?author=Won+Yang"]
+}], "Author",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.432333043774981*^9, 3.432333045441087*^9}, {
+   3.775249122309924*^9, 
+   3.775249124278516*^9}},ExpressionUUID->"94e0886d-dfb3-4d11-952d-\
+07978672b67e"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1920, 1007},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+Magnification->1.25,
+FrontEndVersion->"12.0 for Microsoft Windows (64-bit) (April 8, 2019)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Demonstration.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "AutomaticAnimation"->{
+  Cell[108032, 2141, 1564, 33, 27, "ControlSuggestions",ExpressionUUID->"9ba00148-ce37-4f63-b700-240fa3d7d6b2",
+   CellTags->"AutomaticAnimation"]},
+ "BookmarkAnimation"->{
+  Cell[109599, 2176, 1008, 23, 27, "ControlSuggestions",ExpressionUUID->"479973b8-bc6c-42ad-8adf-73bcb4a48351",
+   CellTags->"BookmarkAnimation"]},
+ "CreateAndDeleteLocators"->{
+  Cell[105871, 2083, 739, 18, 27, "ControlSuggestions",ExpressionUUID->"fa978339-dc8a-425c-8de8-5692bc3c2b79",
+   CellTags->"CreateAndDeleteLocators"]},
+ "DragLocators"->{
+  Cell[105433, 2069, 435, 12, 27, "ControlSuggestions",ExpressionUUID->"96da3af5-cb02-4207-b5dd-dbc7379eea5e",
+   CellTags->"DragLocators"]},
+ "GamepadControls"->{
+  Cell[107560, 2128, 469, 11, 27, "ControlSuggestions",ExpressionUUID->"6eeac2aa-4826-4819-acdd-d3b276978f95",
+   CellTags->"GamepadControls"]},
+ "ResizeImages"->{
+  Cell[104237, 2037, 407, 9, 27, "ControlSuggestions",ExpressionUUID->"72c34e2b-528e-4647-9fd7-d5ccd282aa7e",
+   CellTags->"ResizeImages"]},
+ "RotateAndZoomIn3D"->{
+  Cell[104647, 2048, 783, 19, 27, "ControlSuggestions",ExpressionUUID->"a1ded56a-bc0c-4de1-b76c-65a48a8f2706",
+   CellTags->"RotateAndZoomIn3D"]},
+ "SliderZoom"->{
+  Cell[106613, 2103, 944, 23, 27, "ControlSuggestions",ExpressionUUID->"6fec462b-2fc7-4642-aee1-b25a3fa468a5",
+   CellTags->"SliderZoom"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"AutomaticAnimation", 113282, 2274},
+ {"BookmarkAnimation", 113455, 2277},
+ {"CreateAndDeleteLocators", 113633, 2280},
+ {"DragLocators", 113805, 2283},
+ {"GamepadControls", 113969, 2286},
+ {"ResizeImages", 114133, 2289},
+ {"RotateAndZoomIn3D", 114298, 2292},
+ {"SliderZoom", 114462, 2295}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 186, 3, 93, "DemoTitle",ExpressionUUID->"1d26d9ef-a633-4f6b-b2e3-500daf9036f6"],
+Cell[769, 27, 88, 0, 351, "InitializationSection",ExpressionUUID->"3a2728e2-946d-4029-8a23-47c3dd53a41c"],
+Cell[CellGroupData[{
+Cell[882, 31, 84, 0, 233, "ManipulateSection",ExpressionUUID->"006c84ec-2877-4901-9684-4db52258f9c4"],
+Cell[CellGroupData[{
+Cell[991, 35, 27989, 624, 2862, "Input",ExpressionUUID->"9c865193-6124-4fb4-82fd-7b80d175d7a3"],
+Cell[28983, 661, 14719, 265, 630, "Output",ExpressionUUID->"04f4cbec-e649-4fad-b361-8f21d65b113f",
+ CellID->7857036]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[43751, 932, 91, 0, 215, "ManipulateCaptionSection",ExpressionUUID->"de30e472-7196-482d-a842-07fadaab6bdb"],
+Cell[43845, 934, 1040, 16, 64, "ManipulateCaption",ExpressionUUID->"08409b5f-f9a1-48c0-8007-d03bd34e6029"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[44922, 955, 83, 0, 216, "ThumbnailSection",ExpressionUUID->"e20e50b1-df63-412e-85b5-133be917b72a"],
+Cell[45008, 957, 14721, 265, 630, "Output",ExpressionUUID->"9b1f41a0-8dba-493b-be0e-5ecb15142cb0",
+ CellID->141227715]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[59766, 1227, 83, 0, 179, "SnapshotsSection",ExpressionUUID->"e26d2506-3c0f-4ac1-824c-153e045767a0"],
+Cell[59852, 1229, 14721, 265, 630, "Output",ExpressionUUID->"642c7578-4126-4a51-9d8e-38fa687188a1",
+ CellID->348288181],
+Cell[74576, 1496, 14721, 265, 630, "Output",ExpressionUUID->"4c023be0-2ac4-4388-adf2-21cb6c56dd03",
+ CellID->199332245],
+Cell[89300, 1763, 14721, 265, 630, "Output",ExpressionUUID->"932ecda1-71b8-4c11-b6af-ea95cbebd93c",
+ CellID->337613204]
+}, Open  ]],
+Cell[104036, 2031, 81, 0, 430, "DetailsSection",ExpressionUUID->"5fddca3f-4c6f-466a-aa45-a2d3d5e00dd0"],
+Cell[CellGroupData[{
+Cell[104142, 2035, 92, 0, 136, "ControlSuggestionsSection",ExpressionUUID->"daee7bb3-c9ad-432c-9a5e-e361bfa1b8eb"],
+Cell[104237, 2037, 407, 9, 27, "ControlSuggestions",ExpressionUUID->"72c34e2b-528e-4647-9fd7-d5ccd282aa7e",
+ CellTags->"ResizeImages"],
+Cell[104647, 2048, 783, 19, 27, "ControlSuggestions",ExpressionUUID->"a1ded56a-bc0c-4de1-b76c-65a48a8f2706",
+ CellTags->"RotateAndZoomIn3D"],
+Cell[105433, 2069, 435, 12, 27, "ControlSuggestions",ExpressionUUID->"96da3af5-cb02-4207-b5dd-dbc7379eea5e",
+ CellTags->"DragLocators"],
+Cell[105871, 2083, 739, 18, 27, "ControlSuggestions",ExpressionUUID->"fa978339-dc8a-425c-8de8-5692bc3c2b79",
+ CellTags->"CreateAndDeleteLocators"],
+Cell[106613, 2103, 944, 23, 27, "ControlSuggestions",ExpressionUUID->"6fec462b-2fc7-4642-aee1-b25a3fa468a5",
+ CellTags->"SliderZoom"],
+Cell[107560, 2128, 469, 11, 27, "ControlSuggestions",ExpressionUUID->"6eeac2aa-4826-4819-acdd-d3b276978f95",
+ CellTags->"GamepadControls"],
+Cell[108032, 2141, 1564, 33, 27, "ControlSuggestions",ExpressionUUID->"9ba00148-ce37-4f63-b700-240fa3d7d6b2",
+ CellTags->"AutomaticAnimation"],
+Cell[109599, 2176, 1008, 23, 27, "ControlSuggestions",ExpressionUUID->"479973b8-bc6c-42ad-8adf-73bcb4a48351",
+ CellTags->"BookmarkAnimation"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[110644, 2204, 85, 0, 199, "SearchTermsSection",ExpressionUUID->"7851480f-83a6-4a72-b2a0-effbd91cf441"],
+Cell[110732, 2206, 179, 2, 27, "SearchTerms",ExpressionUUID->"4f6deb27-36fd-425e-99ee-95edb8720aae",
+ CellID->55058426],
+Cell[110914, 2210, 179, 2, 27, "SearchTerms",ExpressionUUID->"2b50cc27-94f4-4b9a-942e-9b615da1cdcd",
+ CellID->585498338],
+Cell[111096, 2214, 175, 2, 27, "SearchTerms",ExpressionUUID->"8c9f67e5-6c7d-4a9f-822c-bc2c9054320d",
+ CellID->61080],
+Cell[111274, 2218, 181, 2, 27, "SearchTerms",ExpressionUUID->"20e55b83-1002-49ef-b752-b017be7c3d7f",
+ CellID->16179203],
+Cell[111458, 2222, 177, 2, 27, "SearchTerms",ExpressionUUID->"90155c95-793f-410b-955a-be66b23da02f",
+ CellID->9836192],
+Cell[111638, 2226, 171, 2, 27, "SearchTerms",ExpressionUUID->"feb0a3da-9b2d-42a0-afcf-712f9a504214",
+ CellID->108475840],
+Cell[111812, 2230, 176, 2, 27, "SearchTerms",ExpressionUUID->"95b63789-e6f9-412d-8986-65a4296ba88a",
+ CellID->661220360],
+Cell[111991, 2234, 177, 2, 27, "SearchTerms",ExpressionUUID->"64e24bca-5539-440c-99bd-ec815a892dbb",
+ CellID->53142529]
+}, Open  ]],
+Cell[112183, 2239, 86, 0, 179, "RelatedLinksSection",ExpressionUUID->"5d62f2fd-4910-4141-a894-931a3a45c493"],
+Cell[CellGroupData[{
+Cell[112294, 2243, 80, 0, 155, "AuthorSection",ExpressionUUID->"2c5848e9-cb24-4544-9464-1222b7912f9a"],
+Cell[112377, 2245, 481, 13, 27, "Author",ExpressionUUID->"94e0886d-dfb3-4d11-952d-07978672b67e"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
